@@ -2,13 +2,31 @@ import Home from "../Pages/Home"
 import AboutUs from "../Pages/AboutUs"
 import ContactUs from "../Pages/ContactUs"
 import Login from "../Pages/Login"
-import Events from "../Pages/Events"
-import NotFound from "../Pages/NotFound"
+import Concerts from "../Pages/Concerts"
+import Theaters from "../Pages/Theaters"
+import Festivals from "../Pages/Festivals"
+import Standups from "../Pages/Standups"
 
 const routes = [
   {
     path: "/",
     element: <Home />
+  },
+  {
+    path: "/Concerts",
+    element: <Concerts />
+  },
+  {
+    path: "/Theaters",
+    element: <Theaters />
+  },
+  {
+    path: "/Festivals",
+    element: <Festivals />
+  },
+  {
+    path: "/Standups",
+    element: <Standups />
   },
   {
     path: "/AboutUs",
@@ -21,14 +39,6 @@ const routes = [
   {
     path: "/Login",
     element: <Login />
-  },
-  {
-    path: "/Events",
-    element: <Events />
-  },
-  {
-    path: "/NotFound",
-    element: <NotFound />
   }
 ]
 

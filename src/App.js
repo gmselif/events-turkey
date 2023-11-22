@@ -1,24 +1,25 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import routes from "../src/routes"
+import Navbar from "./Components/Navbar"
+import Header from "./Components/Header"
+import Footer from "./Components/Footer"
 
 function App() {
   return (
     <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/AboutUs">AboutUs</Link></li>
-        <li><Link to="/ContactUs">ContactUs</Link></li>
-        <li><button><Link to="/Login">Login</Link></button></li>
-      </ul>
-
+      <Navbar />
+      <Header />
+      
       <Routes>
         {
           routes.map((route, key) => {
-            if(route.path != "/NotFound") 
-              return <Route path={route.path} element={route.element} />
+            if(route.path != "/NotFound" && route.path != "/Login") 
+              return <Route key={key} path={route.path} element={route.element} />
           })
         }
       </Routes>
+
+      <Footer />
     </div>
   );
 }
