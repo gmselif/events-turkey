@@ -1,0 +1,205 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "name": "Hakikat Elbet Bir Gün Oyunu",
+      "description": "Berkay Ateş'e 25.Cevdet Kudret Edebiyat Ödülü'nü kazandıran, Serkan Salihoğlu’nun yönettiği 'Hakikat, Elbet Bir Gün' oyunuyla geliyor!",
+      "startDate": "2023-10-15",
+      "endDate": "2023-10-17",
+      "location": "MEB Şura Salonu",
+      "city": "Ankara",
+      "images": [
+        "https://cdn.bubilet.com.tr/files/Etkinlik/hakikat-elbet-bir-gun-oyunu-27398.png",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "theatre",
+      "price": 50
+    },
+    {
+      "id": 2,
+      "name": "Koltuk Senin",
+      "description": "24 yaş ve altı İstanbullulara kültür sanat etkinliklerinden ücretsiz faydalanma fırsatı sunan “Koltuk Senin”, şu ana kadar Borusan Müzik Evi, Süreyya Operası, Cemal Reşit Rey (CRR) Konser Salonu, Turkcell Vadi, Festival Park Yenikapı, Maximum Uniq Box, Festival Park Kadıköy ve Harbiye Cemil Topuzlu Açık Hava Tiyatrosu’nda gerçekleştirilen etkinliklerde boş koltukları ücretsiz olarak gençlerle buluşturdu.",
+      "startDate": "2023-11-05",
+      "endDate": "2023-11-07",
+      "location": "Çeşitli Mekânlar",
+      "city": "İstanbul",
+      "images": [
+        "https://kultur.istanbul/gorsel/2022/05/koltuk-senin-mayis-etkinlik.jpg",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "theatre",
+      "price": 30
+    },
+    {
+      "id": 3,
+      "name": "Hamlet",
+      "description": "Yaşam ve ölüm arasında, iktidar ve intikam arasında, düşüncesi ile eylemi arasında insanın tüm zamanlara özgü çelişkilerini sahneye taşıyan, tiyatro tarihinin en ünlü eseri Hamlet, Engin Alkan’ın rejisinde çağdaş bir okumayla şimdiki zamandan bakılan çarpıcı bir hatırlamaya dönüşüyor.",
+      "startDate": "2023-12-20",
+      "endDate": "2023-12-22",
+      "location": "Şehir Tiyatroları Ümraniye Sahnesi",
+      "city": "İstanbul",
+      "images": [
+        "https://kultur.istanbul/gorsel/2022/10/hamlet-.jpg",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "theatre",
+      "price": 25
+    },
+    {
+      "id": 4,
+      "name": "Kimse Öyle Şeyleri Konuşmuyor",
+      "description": "Dördüncü etkinlik açıklaması.",
+      "startDate": "2024-01-10",
+      "endDate": "2024-01-12",
+      "location": "Oyun,12 Eylül darbesi dönemini en acı şekilde yaşayıp parçalanan bir ailenin bugüne uzanan hikâyesini konu alıyor. Leyla, ailesinin geçmişiyle yüzleşiyor ve onların hikayesini anlatabilmek için hayatını değiştirmeyi göze alıyor.",
+      "city": "İstanbul",
+      "images": [
+        "https://kultur.istanbul/gorsel/2022/02/kimse-oyle-seyleri-konusmuyor-artik-sehir-tiyatrolari.jpg",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "theatre",
+      "price": 40
+    },
+    {
+      "id": 5,
+      "name": "Markalar Festivali",
+      "description": "Markalar Festivali’nde İstanbulluların kış dönemi ve yılbaşı arifesinde Türkiye’nin seçkin markalarının kaliteli ve hesaplı ürünlerine erişebilmesi için önemli bir fırsat zemini yaratılırken, öte yandan İstanbul Vakfı’nın “Büyüt Hayallerini” sosyal sorumluluk projesi kapsamında can suyu olacak.",
+      "startDate": "2024-02-15",
+      "endDate": "2024-02-17",
+      "location": "Festival Park Kadıköy",
+      "city": "İstanbul",
+      "images": [
+        "https://kultur.istanbul/gorsel/2023/11/POST-KARE...jpeg",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "festival",
+      "price": 55
+    },
+    {
+      "id": 6,
+      "name": "Gülmek Yakışır",
+      "description": "Müze Gazhane’nin güldürürken düşündüren kahkaha serisi Gülmek Yakışır’a bu hafta Melisa Besnili konuk oluyor.",
+      "startDate": "2024-03-10",
+      "endDate": "2024-03-12",
+      "location": "Müze Gazhane",
+      "city": "İstanbul",
+      "images": [
+        "https://kultur.istanbul/gorsel/2023/11/26-KASIM_Gulmek_Yakisir-copy.jpg",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "standup",
+      "price": 35
+    },
+    {
+      "id": 7,
+      "name": "Sıla Konseri",
+      "description": "Sıla, KerkiSolfej organizasyonu ile sizlerle buluşuyor.",
+      "startDate": "2024-04-20",
+      "endDate": "2024-04-22",
+      "location": "Carnival Venue Hilltown AVM",
+      "city": "İzmir",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "concert",
+      "price": 20
+    },
+    {
+      "id": 8,
+      "name": "Doğu Demirkol",
+      "description": "Stand up gösterisini kapalı gişe oynayan Ahlat Ağacı, Ölümlü Dünya, Bayi Toplantısı filmlerindeki başarılı performansının ardından,  ‘Doğu’ dizisinin ilk sezonunun çekimlerini tamamlayan komedyen sevenleriyle buluşmaya hazırlanıyor. Türkiye, Avrupa ve Amerika’da ve dünyanın farklı şehirlerinde gerçekleştirdiği tek kişilik gösterisinde kendi yaşamından ve bu topraklarda güldürü niteliği taşıyan her olaydan beslenen Doğu Demirkol, bu sezon da seyircisi ile buluşmaya hazırlanıyor.",
+      "startDate": "2024-05-10",
+      "endDate": "2024-05-12",
+      "location": "Bostanlı Suat Taşer Tiyatrosu",
+      "city": "İzmir",
+      "images": [
+        "https://source.unsplash.com/150x150/?event1_1",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "standup",
+      "price": 60
+    },
+    {
+      "id": 9,
+      "name": "HoliFest İzmir",
+      "description": "Heyecanla beklenen HoliFest İzmir, anılarınıza renk katmaya hazır! 27-28 Nisan 2024’te İzmir Arena'da saat 12.00’de kapılarını açacak olan HoliFest, sıradan bir hafta sonunu renk cümbüşüne çevirecek. DJ setleri, etkileyici dans gösterileri ve sürpriz konserlerle dolu bu festival, herkese unutulmaz anlar yaşatmaya hazır.",
+      "startDate": "2024-06-15",
+      "endDate": "2024-06-17",
+      "location": "İzmir Arena",
+      "city": "İzmir",
+      "images": [
+        "https://cdn.bubilet.com.tr/files/Etkinlik/holifest-izmir-64441.jpg",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "festival",
+      "price": 45
+    },
+    {
+      "id": 10,
+      "name": "Der Bremer Sunar: Güneş - Kum & Bedeviler",
+      "description": "Der Bremer, Türkiye'nin dört farklı şehrinde muhteşem konserlerle müzikseverlerle buluşmaya geliyor. R&B, pop ve Türkçe rap tarzıyla çıkış yapan Güneş ve özgün rock-trap senteziyle son dönemin yükselen ismi Kum, seyirciye unutulmaz anlar yaşatmak için sahnede olacaklar.",
+      "startDate": "2024-07-10",
+      "endDate": "2024-07-12",
+      "location": "İzmir Arena",
+      "city": "İzmir",
+      "images": [
+        "https://cdn.bubilet.com.tr/files/Etkinlik/der-bremer-20356.jpg",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "festival",
+      "price": 30
+    },
+    {
+      "id": 11,
+      "name": "Yıldız Tilbe Konseri",
+      "description": "Şarkıları ile dillerden düşmeyen Yıldız Tilbe, dinleyicileriyle buluşmaya devam ediyor.",
+      "startDate": "2024-08-20",
+      "endDate": "2024-08-22",
+      "location": "Congresium Ankara",
+      "city": "Ankara",
+      "images": [
+        "https://cdn.bubilet.com.tr/files/Etkinlik/-yildiz-tilbe-konseri--69323.png",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "concert",
+      "price": 25
+    },
+    {
+      "id": 12,
+      "name": "Ajda Pekkan",
+      "description": "Ajda Pekkan, KerkiSolfej organizasyonu ile şehrine geliyor!",
+      "startDate": "2024-09-20",
+      "endDate": "2024-09-22",
+      "location": "Congresium Ankara",
+      "city": "Ankara",
+      "images": [
+        "https://cdn.bubilet.com.tr/files/Etkinlik/ajda-pekkan--48333.jpg",
+        "https://source.unsplash.com/150x150/?event1_2",
+        "https://source.unsplash.com/150x150/?event1_3"
+      ],
+      "eventType": "concert",
+      "price": 25
+    }
+  ],
+
+
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@admin.com",
+      "password": "12345"
+    }
+  ]
+}
