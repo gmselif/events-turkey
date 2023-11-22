@@ -7,9 +7,9 @@ function Navbar() {
     <div>
       <ul style={{display:"flex", flexDirection: "row", columnGap: "20px", listStyleType: "none"}}>
         <li><Link to="/"><img src={Logo} alt='Logo' width="50px"/></Link></li>
-        <li><Link to="/AboutUs">AboutUs</Link></li>
-        <li><Link to="/ContactUs">ContactUs</Link></li>
-        <li><button><Link to="/Login">Login</Link></button></li>
+        <li><Link to="/AboutUs">About Us</Link></li>
+        <li><Link to="/ContactUs">Contact Us</Link></li>
+        <li><Link to="/Login"><button>Login</button></Link></li>
       </ul>
 
     </div>
