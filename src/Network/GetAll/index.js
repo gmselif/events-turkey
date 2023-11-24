@@ -1,8 +1,7 @@
-import axios from 'axios'
+import AxiosInstance from "../AxiosInstance";
 
 async function GetAll() {
-  const { data } = await axios.get(`${process.env.REACT_APP_BASE_API_URL}/events`)
-  return data
+  return AxiosInstance("events")
 }
 
 export default GetAll

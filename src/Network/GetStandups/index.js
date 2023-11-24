@@ -1,9 +1,7 @@
-import AxiosInstance from "./AxiosInstance";
+import AxiosInstance from "../AxiosInstance";
 
 function GetStandups() {
-  return (
-    <div>GetStandups</div>
-  )
+  return AxiosInstance("events?eventType=standup")
 }
 
 export default GetStandups
