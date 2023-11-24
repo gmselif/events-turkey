@@ -13,6 +13,10 @@ const routes = [
     element: <Home />
   },
   {
+    path: "/events",
+    element: <Home />
+  },
+  {
     path: "/Concerts",
     element: <Concerts />
   },
