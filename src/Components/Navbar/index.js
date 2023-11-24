@@ -9,6 +9,7 @@ function Navbar() {
         <li><Link to="/"><img src={Logo} alt='Logo' width="50px"/></Link></li>
         <li><Link to="/AboutUs">About Us</Link></li>
         <li><Link to="/ContactUs">Contact Us</Link></li>
+        <li><Link to="/PastEvents">Past Events</Link></li>
         <li><Link to="/Login"><button>Login</button></Link></li>
       </ul>
 
