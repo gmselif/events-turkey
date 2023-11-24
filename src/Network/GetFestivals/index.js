@@ -1,9 +1,7 @@
-import AxiosInstance from "./AxiosInstance";
+import AxiosInstance from "../AxiosInstance";
 
 function GetFestivals() {
-  return (
-    <div>GetFestivals</div>
-  )
+  return AxiosInstance("events?eventType=festival")
 }
 
 export default GetFestivals
