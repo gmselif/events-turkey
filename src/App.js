@@ -4,9 +4,12 @@ import Navbar from "./Components/Navbar"
 import Header from "./Components/Header"
 import Footer from "./Components/Footer"
 
+//Bootstrap
+import Container from 'react-bootstrap/Container';
+
 function App() {
   return (
-    <div>
+    <Container fluid="md">
       <Navbar />
       <Header />
       
@@ -20,7 +23,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </div>
+    </Container>
   );
 }
 

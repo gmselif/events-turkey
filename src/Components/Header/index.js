@@ -1,13 +1,14 @@
 import React from 'react'
 import Slider from "./Slider"
 import Buttons from "./Buttons"
+import Container from 'react-bootstrap/Container';
 
 function Header() {
   return (
-    <div>
+    <Container>
       <Slider />
       <Buttons />
-    </div>
+    </Container>
   )
 }
 
