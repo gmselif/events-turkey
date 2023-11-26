@@ -27,9 +27,7 @@ function App() {
         </Routes>
       </div>
 
-      <div style={{ height: "30vh" }}>
         <Footer />
-      </div>
     </div>
   );
 }
