@@ -8,7 +8,7 @@ function EventCard({ item }) {
   var placeholder = "https://source.unsplash.com/150x150/?event1_1"
   return (
     <Col sm={12} md={6} lg={4} className="p-5 p-sm-5 py-md-3 px-md-4 px-lg-3 px-xl-4 p-xxl-5">
-      <Link to="/" className="text-decoration-none">
+      <Link to={`/${item.id}`} className="text-decoration-none">
         <Card className="h-100 rounded-1 overflow-hidden">
           <Card.Img 
             variant="top" 
