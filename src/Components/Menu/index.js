@@ -11,7 +11,7 @@ function Menu() {
       <Container>
         <Navbar.Brand>
           <Link to="/" 
-            className="text-danger" 
+            className="text-warning" 
             style={{ textDecoration: "none", fontSize:"36px" }}
           >
             Events Turkey
@@ -35,12 +35,12 @@ function Menu() {
           </Nav>
           <Nav>
             <Link to="/Login" className="nav-link text-light">
-              <Button variant="danger">
+              <Button variant="warning">
                 Sign In
               </Button>
             </Link>
             <Link to="/Signup" className="nav-link text-light">
-              <Button variant="danger">
+              <Button variant="warning">
                 Sign Up
               </Button>
             </Link>
