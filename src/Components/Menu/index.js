@@ -10,7 +10,10 @@ function Menu() {
     <Navbar expand="lg" bg="dark" data-bs-theme="dark" fixed="top" style={{maxHeight: "10vh"}}>
       <Container>
         <Navbar.Brand>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          <Link to="/" 
+            className="text-danger" 
+            style={{ textDecoration: "none", fontSize:"36px" }}
+          >
             Events Turkey
           </Link>
         </Navbar.Brand>
@@ -32,12 +35,12 @@ function Menu() {
           </Nav>
           <Nav>
             <Link to="/Login" className="nav-link text-light">
-              <Button variant="outline-light">
+              <Button variant="danger">
                 Sign In
               </Button>
             </Link>
             <Link to="/Signup" className="nav-link text-light">
-              <Button variant="outline-light">
+              <Button variant="danger">
                 Sign Up
               </Button>
             </Link>
