@@ -12,7 +12,7 @@ function Footer() {
       <div className="container text-left border-bottom pt-2 pb-5">
         <div className="row pb-5">
           <div className="col-lg-3">
-            <h2 className="text-uppercase text-danger">Events Turkey</h2>
+            <h2 className="text-uppercase text-warning">Events Turkey</h2>
           </div>
           <div className="col-lg-9">
             <p className="text-light">Events Turkey, organizatörler tarafından düzenlenen farklı kategorilerdeki etkinlikleri, dijital medya platformlarını kullanarak milyonlara ulaştıran yeni nesil online bilet satış sitesidir.</p>
@@ -55,8 +55,8 @@ function Footer() {
       </div>
       <div className="footer-copyright text-center pt-5 text-light">
         © {thisYear} Copyright: 
-        <Link to="/" className="text-light text-decoration-none">Events Turkey. </Link>
-        All Rights Reserved
+        <Link to="/" className="text-light text-decoration-none"> Events Turkey. </Link>
+        All Rights Reserved.
         <br />
         Designed By 
         <a href="https://github.com/gmselif/" className="text-light text-decoration-none"> Elif Gümüş. </a>
