@@ -26,7 +26,7 @@ function EventCard({ item }) {
             <Card.Text className="text-truncate text-secondary">
               <b>Date: </b>{item.startDate} - {item.endDate}
             </Card.Text>
-            <Button variant="warning" className="w-100 rounded-pill">{item.price} $</Button>
+            <Button variant="warning" className="w-100 rounded-pill">{item.price? `${item.price} $`: "Free"}</Button>
           </Card.Body>
         </Card>
       </Link>

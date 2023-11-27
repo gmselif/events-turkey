@@ -3,10 +3,12 @@ import { useQuery } from "react-query"
 import GetAll from '../../Network/GetAll'
 import Slider from "../../Components/Slider"
 import NavigationButtons from "../../Components/NavigationButtons"
+import EventCardWrapper from '../../Components/EventCardWrapper';
 
 function PastEvents() {
   const { status, data } = useQuery("events", GetAll)
 
+  //Returns true if the event has expired.
   const isPast = (date) => {
     const today = new Date();
     const eventDate = new Date(date);
@@ -21,14 +23,9 @@ function PastEvents() {
         <>
           <Slider />
           <NavigationButtons />
-          <ul>
             {
-              data.filter(item =>
-                isPast(item.startDate)).map(item => {
-                  return <li key={item.id}>{item.name}</li>
-                })
+              <EventCardWrapper key={"wrapper"} items={data.filter(item => isPast(item.startDate))} />
             }
-          </ul>
         </>
       )}
     </div>
