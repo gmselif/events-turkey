@@ -9,32 +9,32 @@ import Button from 'react-bootstrap/Button';
 
 function NavigationButtons() {
   return (
-    <Container fluid="xs" className="py-5">
-      <Row >
-        <Col className="text-center">
+    <Container className="py-5">
+      <Row className="justify-content-between">
+        <Col xs={2}>
           <Link to="/Concerts">
-              <Button variant="dark" size="lg">
+              <Button variant="warning" size="lg">
                 Concerts
               </Button>
           </Link>
         </Col>
-        <Col className="text-center">
+        <Col xs={3} className="text-center">
           <Link to="/Theaters">
-              <Button variant="dark" size="lg">
+              <Button variant="warning" size="lg">
                 Theaters
               </Button>
           </Link>
         </Col>
-        <Col className="text-center">
+        <Col xs={3} className="text-center">
           <Link to="/Festivals">
-              <Button variant="dark" size="lg">
+              <Button variant="warning" size="lg">
                 Festivals
               </Button>
           </Link>
         </Col>
-        <Col className="text-center">
+        <Col xs={2} className="text-end">
           <Link to="/Standups">
-              <Button variant="dark" size="lg">
+              <Button variant="warning" size="lg">
                 Standups
               </Button>
           </Link>
