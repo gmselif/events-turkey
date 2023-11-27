@@ -12,6 +12,7 @@ function EventCard({ item }) {
         <Card className="h-100 rounded-1 overflow-hidden">
           <Card.Img 
             variant="top" 
+            className="px-5 py-3"
             style={{ height: "270px" }}
             src={item.images[0]? item.images[0] : placeholder}  
           />
@@ -19,6 +20,9 @@ function EventCard({ item }) {
             <Card.Title className="text-truncate">{item.name}</Card.Title>
             <Card.Text className="text-truncate">
               {item.description}
+            </Card.Text>
+            <Card.Text className="text-truncate text-secondary">
+              <b>City:</b> {item.city}
             </Card.Text>
             <Card.Text className="text-truncate text-secondary">
               <b>Location:</b> {item.location}
