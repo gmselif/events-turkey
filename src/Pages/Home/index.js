@@ -16,7 +16,7 @@ function Home() {
         <>
           <Slider/>
           <NavigationButtons />
-          <EventCardWrapper key="wrapper" items={data}></EventCardWrapper>
+          <EventCardWrapper key="wrapper" items={data} />
         </>
       )}
     </div>

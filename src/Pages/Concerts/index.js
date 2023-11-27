@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import GetConcerts from '../../Network/GetConcerts'
 import Slider from "../../Components/Slider"
 import NavigationButtons from "../../Components/NavigationButtons"
+import EventCardWrapper from '../../Components/EventCardWrapper';
 
 function Concerts() {
   const { status, data } = useQuery("events", GetConcerts)
@@ -13,13 +14,9 @@ function Concerts() {
       {status === "loading" && <p>Fetching data...</p>}
       {status === "success" && (
         <>
-          <Slider pictures/>
+          <Slider />
           <NavigationButtons />
-          <ul>
-            {
-              data.map(item => { return <li key={item.id}>{item.name}</li> })
-            }
-          </ul>
+          <EventCardWrapper items={data}/>
         </>
       )}
     </div>
