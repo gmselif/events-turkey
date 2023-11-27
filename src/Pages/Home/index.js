@@ -61,7 +61,7 @@ function Home() {
             </Row>
           </Container>
 
-          <EventCardWrapper key="wrapper" items={filteredData} />
+          <EventCardWrapper key="wrapper" items={filteredData? filteredData : setFilteredData(data)} />
         </>
       )}
     </div>
