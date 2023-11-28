@@ -20,7 +20,7 @@ function Menu() {
             Events Turkey
           </Link>
         </Navbar.Brand>
-        <div class="w-33"></div>
+        <div className="w-40"></div>
         <Navbar.Collapse id="responsive-navbar-nav" className="bg-dark ps-2">
           <Nav className="me-auto">
             <Link to="/AboutUs" className="nav-link text-light">
