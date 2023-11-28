@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
-import Carousel from 'react-bootstrap/Carousel';
-import Image from 'react-bootstrap/Image'
-import Container from 'react-bootstrap/Container';
+import { Carousel, Image } from 'react-bootstrap';
 
 //Pictures
 import picture1 from '../../assets/Pictures/picture1.png'
@@ -18,11 +16,11 @@ function Slider({ pictures }) {
   };
 
   return (
-    <Carousel fade style={{ marginTop: "9vh" }}>
+    <Carousel fade className="mt-5 w-100 overflow-hidden" /*style={{maxHeight: "60vh"}}*/>
       {
         pictures.map((picture, key) => {
-          return <Carousel.Item key={key} style={{ height: "60vh" }}>
-            <Image src={picture} text="First slide" fluid />
+          return <Carousel.Item key={key} >
+            <Image src={picture} text="First slide" className="w-100" />
           </Carousel.Item>
         })
       }
