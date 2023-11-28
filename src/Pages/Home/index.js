@@ -125,7 +125,7 @@ function Home() {
           <NavigationButtons />
           <SearchBar searchText={searchText} handleChange={searchHandleChange} searchbarHandleSubmit={searchbarHandleSubmit} />
           <FilterBar CityOptions={CityOptions} LocationOptions={LocationOptions} handleClearButton={handleClearButton} city={city} location={location} startDate={startDate} endDate={endDate} cityHandleChange={cityHandleChange} locationHandleChange={locationHandleChange} startDateHandleChange={startDateHandleChange} endDateHandleChange={endDateHandleChange} filterHandleSubmit={filterHandleSubmit} />
-          <EventCardWrapper items={filteredData ? filteredData : setFilteredData(data)} />
+          <EventCardWrapper items={filteredData ? filteredData : setFilteredData(data)} setFilteredData={setFilteredData}/>
         </>
       )}
     </>
