@@ -1,27 +1,25 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 
 function Menu() {
   return (
-    <Navbar expand="lg" bg="dark" data-bs-theme="dark" fixed="top" style={{maxHeight: "10vh"}}>
-      <Container>
-        
-        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-        
+    <Navbar expand="lg" bg="dark" data-bs-theme="dark" fixed="top">
+      <Container /* fluid="lg"*/>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
         <Navbar.Brand>
-          <Link to="/" 
-            className="text-warning pe-sm-auto" 
-            style={{ textDecoration: "none", fontSize:"36px" }}
+          <Link to="/"
+            className="text-warning pe-sm-auto text-decoration-none"
+            style={{ fontSize: "36px" }}
           >
             Events Turkey
           </Link>
         </Navbar.Brand>
+
         <div className="w-40"></div>
-        <Navbar.Collapse id="responsive-navbar-nav" className="bg-dark ps-2">
+
+        <Navbar.Collapse id="responsive-navbar-nav" className="bg-dark">
           <Nav className="me-auto">
             <Link to="/AboutUs" className="nav-link text-light">
               About Us
