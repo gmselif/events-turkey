@@ -9,25 +9,25 @@ function Menu() {
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark" fixed="top" style={{maxHeight: "10vh"}}>
       <Container>
+        
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+        
         <Navbar.Brand>
           <Link to="/" 
-            className="text-warning" 
+            className="text-warning pe-sm-auto" 
             style={{ textDecoration: "none", fontSize:"36px" }}
           >
             Events Turkey
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <div class="w-33"></div>
+        <Navbar.Collapse id="responsive-navbar-nav" className="bg-dark ps-2">
           <Nav className="me-auto">
             <Link to="/AboutUs" className="nav-link text-light">
               About Us
             </Link>
             <Link to="/ContactUs" className="nav-link text-light">
               Contact Us
-            </Link>
-            <Link to="/PastEvents" className="nav-link text-light">
-              Past Events
             </Link>
             <Link to="/PastEvents" className="nav-link text-light">
               Past Events
