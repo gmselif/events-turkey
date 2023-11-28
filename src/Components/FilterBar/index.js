@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-function FilterBar({CityOptions, LocationOptions, ClearFilter, city, location, startDate, endDate, cityHandleChange, locationHandleChange, startDateHandleChange, endDateHandleChange, filterHandleSubmit}) {
+function FilterBar({CityOptions, LocationOptions, handleClearButton, city, location, startDate, endDate, cityHandleChange, locationHandleChange, startDateHandleChange, endDateHandleChange, filterHandleSubmit}) {
   return (
     <Container className="my-5 p-4 bg-dark rounded-pill">
               <Row>
@@ -47,7 +47,7 @@ function FilterBar({CityOptions, LocationOptions, ClearFilter, city, location, s
                         <Button type="submit" variant="warning">Search</Button>
                       </Col>
                       <Col>
-                        <Button type="button" onClick={ClearFilter} variant="danger" size="lg">Clear</Button>
+                        <Button type="button" onClick={handleClearButton} variant="danger" size="lg">Clear</Button>
                       </Col>
                     </Row>
                   </form>
