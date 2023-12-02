@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import routes from "../src/routes"
 import Menu from "./Components/Menu"
 import Footer from "./Components/Footer"
+import ScrollToTopButton from "./Components/ScrollToTopButton"
 
 //Bootstrap
 import Container from 'react-bootstrap/Container';
@@ -21,6 +22,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
