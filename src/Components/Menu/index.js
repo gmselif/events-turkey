@@ -21,6 +21,9 @@ function Menu() {
 
         <Navbar.Collapse id="responsive-navbar-nav" className="bg-dark">
           <Nav className="me-auto">
+            <Link to="/" className="nav-link text-light">
+              Events
+            </Link>
             <Link to="/AboutUs" className="nav-link text-light">
               About Us
             </Link>
@@ -32,7 +35,7 @@ function Menu() {
             </Link>
           </Nav>
           <Nav>
-            <Link to="/Login" className="nav-link text-light">
+            <Link to="/Signin" className="nav-link text-light">
               <Button variant="warning">
                 Sign In
               </Button>
