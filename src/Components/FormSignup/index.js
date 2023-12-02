@@ -1,5 +1,6 @@
 import React from 'react'
 import Validation from './Validation'
+import { Link } from 'react-router-dom'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 function FormSignup() {
@@ -20,7 +21,7 @@ function FormSignup() {
                 <Row className="justify-content-center">
                   <Col xs={6}>
                     <i className="bi bi-person-fill" style={{ fontSize: "3rem" }}></i>
-                    <h1 style={{ display: "inline-block", marginLeft: "10px" }}>Signup</h1>
+                    <h1 style={{ display: "inline-block", marginLeft: "10px" }}>Sign Up</h1>
                   </Col>
                 </Row>
               </Col>
@@ -103,7 +104,7 @@ function FormSignup() {
                 </Row>
               </Col>
               <Col xs={12}>
-                <Button type="submit" variant="dark" className="w-100 py-3 rounded-5">Submit</Button>
+                <Button type="submit" variant="dark" className="w-100 py-3 rounded-5">Sign Up</Button>
               </Col>
             </Row>
           </Col>
@@ -149,7 +150,9 @@ function FormSignup() {
                     <p>If you have an account you can sign in.</p>
                   </Col>
                   <Col xs={3}>
-                    <Button variant="dark" className="w-100 rounded-5">Sign In</Button>
+                    <Link to="/Signin">
+                      <Button variant="dark" className="w-100 rounded-5">Sign In</Button>
+                    </Link>
                   </Col>
                 </Row>
               </Col>
