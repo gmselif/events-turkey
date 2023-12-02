@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: "hidden", backgroundColor: "#f1f1f1" }}>
       <Menu />
       
       <Routes>

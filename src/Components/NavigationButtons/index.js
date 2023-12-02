@@ -9,37 +9,39 @@ import Button from 'react-bootstrap/Button';
 
 function NavigationButtons() {
   return (
-    <Container className="py-5">
-      <Row className="justify-content-center">
-        <Col xs={5} md={3} className="pb-3 pb-md-0">
-          <Link to="/Concerts">
-              <Button variant="warning" size="lg" className="w-100">
+    <Container fluid className="bg-dark">
+      <Container className="p-3">
+        <Row className="justify-content-center">
+          <Col xs={6} md={3} className="mb-3 mb-md-0">
+            <Link to="/Concerts">
+              <Button variant="warning" size="lg" className="w-100 py-3 py-xl-4 rounded-4">
                 Concerts
               </Button>
-          </Link>
-        </Col>
-        <Col xs={5} md={3}>
-          <Link to="/Theaters">
-              <Button variant="warning" size="lg" className="w-100">
+            </Link>
+          </Col>
+          <Col xs={6} md={3}>
+            <Link to="/Theaters">
+              <Button variant="warning" size="lg" className="w-100 py-3 py-xl-4 rounded-4">
                 Theaters
               </Button>
-          </Link>
-        </Col>
-        <Col xs={5} md={3}>
-          <Link to="/Festivals">
-              <Button variant="warning" size="lg" className="w-100">
+            </Link>
+          </Col>
+          <Col xs={6} md={3}>
+            <Link to="/Festivals">
+              <Button variant="warning" size="lg" className="w-100 py-3 py-xl-4 rounded-4">
                 Festivals
               </Button>
-          </Link>
-        </Col>
-        <Col xs={5} md={3} className="text-lg-center">
-          <Link to="/Standups">
-              <Button variant="warning" size="lg" className="w-100">
+            </Link>
+          </Col>
+          <Col xs={6} md={3} className="text-lg-center">
+            <Link to="/Standups">
+              <Button variant="warning" size="lg" className="w-100 py-3 py-xl-4 rounded-4">
                 Standups
               </Button>
-          </Link>
-        </Col>
-      </Row>
+            </Link>
+          </Col>
+        </Row>
+      </Container>
     </Container>
   )
 }
