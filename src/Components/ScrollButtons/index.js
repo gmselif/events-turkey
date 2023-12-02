@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "bootstrap-icons/font/bootstrap-icons.css"
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
-function ScrollToTopButton() {
+function ScrollButtons() {
   const [visible, setVisible] = useState(false)
 
   const toggleVisible = () => {
@@ -51,4 +51,4 @@ function ScrollToTopButton() {
   );
 }
 
-export default ScrollToTopButton;
+export default ScrollButtons;

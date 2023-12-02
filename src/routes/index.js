@@ -1,13 +1,14 @@
 import Home from "../Pages/Home"
 import AboutUs from "../Pages/AboutUs"
 import ContactUs from "../Pages/ContactUs"
-import Login from "../Pages/Login"
 import PastEvents from "../Pages/PastEvents"
 import Concerts from "../Pages/Concerts"
 import Theaters from "../Pages/Theaters"
 import Festivals from "../Pages/Festivals"
 import Standups from "../Pages/Standups"
 import Details from "../Pages/Details"
+import Signin from "../Pages/Signin"
+import Signup from "../Pages/Signup"
 
 const routes = [
   {
@@ -67,8 +68,12 @@ const routes = [
     element: <ContactUs />
   },
   {
-    path: "/Login",
-    element: <Login />
+    path: "/Signin",
+    element: <Signin />
+  },
+  {
+    path: "/Signup",
+    element: <Signup />
   }
 ]
 
