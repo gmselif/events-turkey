@@ -1,4 +1,5 @@
 import React from 'react'
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -7,59 +8,93 @@ function Footer() {
   var email = "info.tr@gmail.com"
   var phone = "+90 555 555 5555"
 
+  const linkStyle = "text-light text-decoration-none"
+
   return (
     <footer className="page-footer blue py-5 bg-dark">
-      <div className="container text-left border-bottom pt-2 pb-5">
-        <div className="row pb-5">
-          <div className="col-lg-3">
+      <Container className="container text-left border-bottom pt-2 pb-5">
+        <Row className="mb-5 mb-lg-5 px-4 px-sm-0">
+          <Col xs={12} xl={3}>
             <h2 className="text-uppercase text-warning">Events Turkey</h2>
-          </div>
-          <div className="col-lg-9">
+          </Col>
+          <Col xs={12} xl={9}>
             <p className="text-light">Events Turkey, organizatörler tarafından düzenlenen farklı kategorilerdeki etkinlikleri, dijital medya platformlarını kullanarak milyonlara ulaştıran yeni nesil online bilet satış sitesidir.</p>
-          </div>
-        </div>
-        <div className="row pt-5">
+          </Col>
+        </Row>
 
+        <Row className="mt-xl-4 px-4 px-sm-0">
           {/*<hr className="clearfix w-100 d-md-none pb-0" />*/}
 
-          <div className="col-md-3">
+          <Col xs={12} md={2} lg={3} className="mb-5">
             <h5 className="text-uppercase text-light">Menu</h5>
             <ul className="list-unstyled">
-              <li><Link to="/" className="text-light text-decoration-none" >Home</Link></li>
-              <li><Link to="/AboutUs" className="text-light text-decoration-none" >About Us</Link></li>
-              <li><Link to="/PastEvents" className="text-light text-decoration-none" >Past Events</Link></li>
+              <li><Link to="/" className={linkStyle} >Home</Link></li>
+              <li><Link to="/AboutUs" className={linkStyle} >About Us</Link></li>
+              <li><Link to="/PastEvents" className={linkStyle} >Past Events</Link></li>
             </ul>
-          </div>
+          </Col>
 
-          <div className="col-md-3">
+          <Col xs={12} md={3} className="mb-5">
             <h5 className="text-uppercase text-light">Categories</h5>
             <ul className="list-unstyled">
-              <li><Link to="/Concerts" className="text-light text-decoration-none">Concerts</Link></li>
-              <li><Link to="/Theaters" className="text-light text-decoration-none">Theaters</Link></li>
-              <li><Link to="/Festivals" className="text-light text-decoration-none">Festivals</Link></li>
-              <li><Link to="/Standups" className="text-light text-decoration-none">Standups</Link></li>
+              <li><Link to="/Concerts" className={linkStyle}>Concerts</Link></li>
+              <li><Link to="/Theaters" className={linkStyle}>Theaters</Link></li>
+              <li><Link to="/Festivals" className={linkStyle}>Festivals</Link></li>
+              <li><Link to="/Standups" className={linkStyle}>Standups</Link></li>
             </ul>
-          </div>
+          </Col>
 
-          <div className="col-md-3">
+          <Col xs={12} md={4} className="mb-5 pe-5">
             <h5 className="text-uppercase text-light">Contact Us</h5>
-            <p  className="text-light">{address}</p>
-            <p  className="text-light"><b>Phone:</b> {phone}</p>
-            <p  className="text-light"><b>Email:</b> {email}</p>
-          </div>
+            <Row className="text-light align-items-center">
+              <Col xs={2}>
+                <i className="bi bi-geo-alt-fill" style={{ fontSize: "2rem" }} />
+              </Col>
+              <Col xs={9}>
+                {address}
+              </Col>
+            </Row>
+            <Row className="text-light align-items-center">
+              <Col xs={2}>
+                <i className="bi bi-telephone-fill" style={{ fontSize: "2rem" }} />
+              </Col>
+              <Col xs={9}>
+                {phone}</Col>
+            </Row>
+            <Row className="text-light align-items-center">
+              <Col xs={2}>
+                <i className="bi bi-envelope-at-fill" style={{ fontSize: "2rem" }} />
+              </Col>
+              <Col xs={9}>
+                {email}</Col>
+            </Row>
+          </Col>
 
-          <div className="col-md-3">
+          <Col xs={12} md={3} lg={2} className="mb-3">
             <h5 className="text-uppercase text-light">Follow Us</h5>
-          </div>
-        </div>
-      </div>
+            <a href="https://facebook.com/">
+              <i className="bi bi-facebook text-light me-2" style={{ fontSize: "2rem" }} />
+            </a>
+            <a href="https://www.linkedin.com/in/elif-gumus/">
+              <i className="bi bi-linkedin text-light me-2" style={{ fontSize: "2rem" }} />
+            </a>
+            <a href="https://twitter.com/">
+              <i className="bi bi-twitter-x text-light me-2" style={{ fontSize: "2rem" }} />
+            </a>
+            <a href="https://www.instagram.com/">
+              <i className="bi bi-instagram text-light me-2" style={{ fontSize: "2rem" }} />
+            </a>
+          </Col>
+        </Row>
+      </Container>
+
       <div className="footer-copyright text-center pt-5 text-light">
-        © {thisYear} Copyright: 
-        <Link to="/" className="text-light text-decoration-none"> Events Turkey. </Link>
+        © {thisYear} Copyright:
+        <Link to="/" className="text-light"> Events Turkey. </Link>
         All Rights Reserved.
         <br />
-        Designed By 
-        <a href="https://github.com/gmselif/" className="text-light text-decoration-none"> Elif Gümüş. </a>
+        Designed By
+        <a href="https://github.com/gmselif/" className="text-light"> Elif Gümüş. </a>
       </div>
     </footer>
   )
