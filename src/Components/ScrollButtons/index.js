@@ -42,10 +42,10 @@ function ScrollButtons() {
       color: "#ffc107"
     }}>
       <div>
-        <i class="bi bi-arrow-up-circle-fill" onClick={scrollToTop} style={{fontSize: "2rem", display: visible ? 'inline' : 'none'}} />
+        <i className="bi bi-arrow-up-circle-fill" onClick={scrollToTop} style={{fontSize: "2rem", display: visible ? 'inline' : 'none'}} />
       </div>
       <div xs={12}>
-        <i class="bi bi-arrow-down-circle-fill" onClick={scrollToBottom} style={{fontSize: "2rem", display: visible ? 'inline' : 'none'}} />
+        <i className="bi bi-arrow-down-circle-fill" onClick={scrollToBottom} style={{fontSize: "2rem", display: visible ? 'inline' : 'none'}} />
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ function FormSignup() {
               <Col xs={12}>
                 <Row className="justify-content-center">
                   <Col xs={6}>
-                    <i class="bi bi-person-fill" style={{ fontSize: "3rem" }}></i>
+                    <i className="bi bi-person-fill" style={{ fontSize: "3rem" }}></i>
                     <h1 style={{ display: "inline-block", marginLeft: "10px" }}>Signup</h1>
                   </Col>
                 </Row>
@@ -81,7 +81,7 @@ function FormSignup() {
                     />
                   </Col>
                   <Col xs={11}>
-                    <label for="checkbox1">Ön Bilgilendirme Koşullarını ve Mesafeli Satış Sözleşmesini Okudum.</label>
+                    <label htmlFor="checkbox1">Ön Bilgilendirme Koşullarını ve Mesafeli Satış Sözleşmesini Okudum.</label>
                   </Col>
                 </Row>
               </Col>
@@ -98,7 +98,7 @@ function FormSignup() {
                     />
                   </Col>
                   <Col xs={11}>
-                    <label for="checkbox2">Bubilet.com.tr bültenlerine abone olmak istiyorum.</label>
+                    <label htmlFor="checkbox2">Bubilet.com.tr bültenlerine abone olmak istiyorum.</label>
                   </Col>
                 </Row>
               </Col>
@@ -112,7 +112,7 @@ function FormSignup() {
               <Col xs={12} className="border-bottom border-dark mb-4 pb-3">
                 <Row className="align-items-center">
                   <Col xs={3}>
-                    <i class="bi bi-award" style={{ fontSize: "5rem" }}></i>
+                    <i className="bi bi-award" style={{ fontSize: "5rem" }}></i>
                   </Col>
                   <Col xs={8}>
                     <h2>Quality Service</h2>
@@ -124,7 +124,7 @@ function FormSignup() {
               <Col xs={12} className="border-bottom border-dark mb-4 pb-3">
                 <Row>
                   <Col xs={3}>
-                    <i class="bi bi-cash-coin" style={{ fontSize: "5rem" }}></i>
+                    <i className="bi bi-cash-coin" style={{ fontSize: "5rem" }}></i>
                   </Col>
                   <Col xs={8}>
                     <h2>The Most Reasonable Price</h2>
@@ -135,7 +135,7 @@ function FormSignup() {
               <Col xs={12} className="border-bottom border-dark mb-4 pb-3">
                 <Row>
                   <Col xs={3}>
-                    <i class="bi bi-ticket-perforated" style={{ fontSize: "5rem" }}></i>
+                    <i className="bi bi-ticket-perforated" style={{ fontSize: "5rem" }}></i>
                   </Col>
                   <Col xs={9}>
                     <h2>The Easiest Way To Buy Tickets</h2>
