@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useQuery } from "react-query"
 import GetAll from '../../Network/GetAll'
 import EventCardWrapper from '../../Components/EventCardWrapper';
@@ -10,7 +10,6 @@ import FilterBar from '../../Components/FilterBar';
 function Home() {
   const { status, data } = useQuery("events", GetAll)
   const [filteredData, setFilteredData] = useState(data)
-
 
   const [searchText, setSearchText] = useState("")//SearchBar
   const [city, setCity] = useState("")
