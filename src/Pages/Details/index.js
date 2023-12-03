@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import Slider from '../../Components/Slider'
 import ShareButtons from '../../Components/ShareButtons';
 import { Container, Row, Col, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap'
+import Breadcrumbs from '../../Components/Breadcrumbs'
 
 function Details() {
   const { id } = useParams();
@@ -48,7 +49,10 @@ function Details() {
       {status === "loading" && <p>Fetching data...</p>}
       {status === "success" && (
         <Container className="mt-5">
-          <Row className="gap-5">
+          <Row className="column-gap-5">
+            <Col xs={12} className="mt-5 pt-5">
+              <Breadcrumbs eventName={data[0].name} />
+            </Col>
             <Col xs={3}>{/*Picture*/}
               {fixed ? (
                 <Row className='bg-black w-100'>
@@ -65,6 +69,7 @@ function Details() {
               )
               }
             </Col>
+
             {/* Right Column */}
             <Col xs={8} className="mt-5">
               {/* First Row */}
