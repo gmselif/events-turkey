@@ -6,6 +6,7 @@ import Slider from '../../Components/Slider'
 import ShareButtons from '../../Components/ShareButtons';
 import { Container, Row, Col, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap'
 import Breadcrumbs from '../../Components/Breadcrumbs'
+import { Link } from "react-router-dom";
 
 function Details() {
   const { id } = useParams();
@@ -49,31 +50,19 @@ function Details() {
       {status === "loading" && <p>Fetching data...</p>}
       {status === "success" && (
         <Container className="mt-5">
-          <Row className="column-gap-5">
+          <Row className="column-gap-5 justify-content-center">
             <Col xs={12} className="mt-5 pt-5">
               <Breadcrumbs eventName={data[0].name} />
             </Col>
-            <Col xs={3}>{/*Picture*/}
-              {fixed ? (
-                <Row className='bg-black w-100'>
-                  <Col xs={3} className="top-5 position-fixed">
-                    <Slider pictures={data[0].images} />
-                  </Col>
-                </Row>
-              ) : (
-                <Row className="align-items-baseline">
-                  <Col xs={3} className="top-5" >
-                    <Slider pictures={data[0].images} />
-                  </Col>
-                </Row>
-              )
-              }
+            <Col xs={12} md={3}>{/*Picture*/}
+              <Slider pictures={data[0].images} />
             </Col>
 
             {/* Right Column */}
-            <Col xs={8} className="mt-5">
-              {/* First Row */}
-              <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
+            <Col xs={11} md={8} className="mt-5">
+
+              {/* Explanation Section */}
+              <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5">
                 <Col xs={12}>
                   <h2>{data[0].name}</h2>
                 </Col>
@@ -93,14 +82,9 @@ function Details() {
                     </Col>
                   </Row>
                 </Col>
-                {/*<Col xs={12} className="mb-5">
-                  <button style={{ border: "none", borderRightStyle: "solid", fontSize: "20px" }} className="text-warning bg-white fw-bold ps-0 pe-5">Tickets</button>
-                  <button style={{ border: "none", borderRightStyle: "solid", fontSize: "20px" }} className="text-warning bg-white fw-bold px-5">Performers</button>
-                  <button style={{ border: "none", borderRightStyle: "solid", fontSize: "20px" }} className="text-warning bg-white fw-bold px-5">Rules</button>
-                </Col>*/}
                 <Col xs={12}>
                   <Row>
-                    <Col xs={8}>
+                    <Col xs={12} lg={8}>
                       <Button variant="outline-warning" size="lg" onClick={() => setValue("tickets")}>
                         Tickets
                       </Button>
@@ -111,31 +95,30 @@ function Details() {
                         Rules
                       </Button>
                     </Col>
-                    <Col xs={4}>
+                    <Col xs={12} lg={4} className="text-lg-end mt-4 mt-lg-0">
                       <Button variant="danger" size="lg">
                         Add Favorities
-                        <i className="bi bi-heart-fill text-white ms-3" />
+                        <i className="bi bi-heart-fill text-white ms-1 ms-lg-3" />
                       </Button>
                     </Col>
                   </Row>
                 </Col>
-              </Row>
+              </Row>{/* Explanation Section END*/}
 
-              {/* Second Row*/}
+              {/*Buy A Ticket Section*/}
               {value == "tickets" && data[0].price &&
-                <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
+                <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5">
                   <Col xs={12} className="mb-4">
                     <Row className="align-items-center justify-content-between">
-                      <Col xs={9}>
+                      <Col xs={6}>
                         <h3>Buy a Ticket</h3>
                       </Col>
-                      <Col xs={3} className="text-end">
+                      <Col xs={6} className="text-end">
                         <h6>Choose a date</h6>
                       </Col>
                     </Row>
                   </Col>
-
-                  {/*Buy A Ticket Section*/}
+                  
                   <Col xs={12} className="border border-1 border-secondary rounded-5 text-black ps-4 pt-3 pb-0 pe-0 overflow-hidden">
                     <Row>
                       <Col xs={8}>
@@ -155,24 +138,22 @@ function Details() {
                       <Col xs={4} className="text-end">
                         <Row className='h-100'>
                           <Col xs={12}>
-                            <p style={{ fontSize: "30px" }} className="pr-4">
+                            <p style={{ fontSize: "30px" }} className="me-4">
                               {data[0].price} $
                             </p>
                           </Col>
                           <Col xs={12}>
-                            <Button variant="warning" style={{ borderTopLeftRadius: "30px" }} className="h-100 px-5 py-0 text-uppercase">
-                              <i class="bi bi-basket2-fill me-4" style={{ fontSize: "1.5rem" }}></i>
+                            <Button variant="warning" className="h-100 px-4 px-lg-5 py-0 text-uppercase" style={{ borderTopLeftRadius: "30px" }} >
+                              <i class="bi bi-basket2-fill me-lg-1 me-xl-4" style={{ fontSize: "1.5rem" }}></i>
                               Buy
                             </Button>
                           </Col>
                         </Row>
                       </Col>
-
                     </Row>
                   </Col>
-
                 </Row>
-              }
+              }{/*Buy A Ticket Section END*/}
 
               {value == "performers" &&
                 <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
@@ -190,24 +171,33 @@ function Details() {
                 </Row>
               }
 
+
+
+              {/* Google Map Section */}
+              <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5 gap-4 text-center text-capitalize">
+                <Col xs={12}>
+                  <h3>{`${data[0].city} - ${data[0].location}`}</h3>
+                </Col>
+                <Col xs={12}>
+                  <iframe
+                    src={(googleMap.find(item => item.city.toLowerCase() === data[0].city.toLowerCase())).url}
+                    height="400"
+                    className="w-100 rounded-5"
+                    loading="lazy">
+                  </iframe>
+                </Col>
+              </Row>
+
               {/* Share Button Section */}
-              <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
+              <Row className="p-4 pe-md-5 p-lg-5 bg-white rounded-5 shadow mb-5 gap-4">
+                <Col xs={12} className="text-md-center text-capitalize">
+                  <h3>share this page on social media</h3>
+                </Col>
                 <Col xs={12}>
                   <ShareButtons eventName={data[0].name} eventType={data[0].eventType} eventDescription={data[0].description} />
                 </Col>
               </Row>
 
-              {/* Google Map Section */}
-              <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
-                <Col xs={12}>
-                  <iframe
-                    src={(googleMap.find(item => item.city.toLowerCase() === data[0].city.toLowerCase())).url}
-                    height="450"
-                    style={{ border: "0", width: "100%" }}
-                    loading="lazy">
-                  </iframe>
-                </Col>
-              </Row>
             </Col>
           </Row>
         </Container>
