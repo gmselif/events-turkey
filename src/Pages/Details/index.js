@@ -96,13 +96,13 @@ function Details() {
                 <Col xs={12}>
                   <Row>
                     <Col xs={8}>
-                      <Button variant="outline-warning" size="lg" onClick={()=> setValue("tickets")}>
+                      <Button variant="outline-warning" size="lg" onClick={() => setValue("tickets")}>
                         Tickets
                       </Button>
-                      <Button variant="outline-warning" size="lg" onClick={()=> setValue("performers")}>
+                      <Button variant="outline-warning" size="lg" onClick={() => setValue("performers")}>
                         Performers
                       </Button>
-                      <Button variant="outline-warning" size="lg" onClick={()=> setValue("rules")}>
+                      <Button variant="outline-warning" size="lg" onClick={() => setValue("rules")}>
                         Rules
                       </Button>
                     </Col>
@@ -116,11 +116,84 @@ function Details() {
                 </Col>
               </Row>
 
-              {/* Second Row */}
+              {/* Second Row*/}
+              {value == "tickets" && data[0].price &&
+                <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
+                  <Col xs={12} className="mb-4">
+                    <Row className="align-items-center justify-content-between">
+                      <Col xs={9}>
+                        <h3>Buy a Ticket</h3>
+                      </Col>
+                      <Col xs={3} className="text-end">
+                        <h6>Choose a date</h6>
+                      </Col>
+                    </Row>
+                  </Col>
+
+                  {/*Buy A Ticket Section*/}
+                  <Col xs={12} className="border border-1 border-secondary rounded-5 text-black ps-4 pt-3 pb-0 pe-0 overflow-hidden">
+                    <Row>
+                      <Col xs={8}>
+                        <Row>
+                          <Col xs={12} className="text-dark-emphasis">
+                            <h5>{data[0].startDate}</h5>
+                          </Col>
+                          <Col xs={12} className="text-dark-emphasis mb-4">
+                            <h6>{`${data[0].city} - ${data[0].location}`}</h6>
+                          </Col>
+                          <Col xs={12} className="text-warning">
+                            <i class="bi bi-easel2-fill me-4" style={{ fontSize: "1.5rem" }} />
+                            <p className="d-inline-block">Choose your seat</p>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col xs={4} className="text-end">
+                        <Row className='h-100'>
+                          <Col xs={12}>
+                            <p style={{ fontSize: "30px" }} className="pr-4">
+                              {data[0].price} $
+                            </p>
+                          </Col>
+                          <Col xs={12}>
+                            <Button variant="warning" style={{ borderTopLeftRadius: "30px" }} className="h-100 px-5 py-0 text-uppercase">
+                              <i class="bi bi-basket2-fill me-4" style={{ fontSize: "1.5rem" }}></i>
+                              Buy
+                            </Button>
+                          </Col>
+                        </Row>
+                      </Col>
+
+                    </Row>
+                  </Col>
+
+                </Row>
+              }
+
+              {value == "performers" &&
+                <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
+                  <Col xs={12}>
+
+                  </Col>
+                </Row>
+              }
+
+              {value == "rules" &&
+                <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
+                  <Col xs={12}>
+
+                  </Col>
+                </Row>
+              }
+
+              {/* Share Button Section */}
               <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
                 <Col xs={12}>
                   <ShareButtons eventName={data[0].name} eventType={data[0].eventType} eventDescription={data[0].description} />
                 </Col>
+              </Row>
+
+              {/* Google Map Section */}
+              <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
                 <Col xs={12}>
                   <iframe
                     src={(googleMap.find(item => item.city.toLowerCase() === data[0].city.toLowerCase())).url}
