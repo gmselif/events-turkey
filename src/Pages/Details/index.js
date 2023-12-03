@@ -118,7 +118,7 @@ function Details() {
                       </Col>
                     </Row>
                   </Col>
-                  
+
                   <Col xs={12} className="border border-1 border-secondary rounded-5 text-black ps-4 pt-3 pb-0 pe-0 overflow-hidden">
                     <Row>
                       <Col xs={8}>
@@ -156,17 +156,26 @@ function Details() {
               }{/*Buy A Ticket Section END*/}
 
               {value == "performers" &&
-                <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
-                  <Col xs={12}>
+                <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5">
+                  <Col xs={12} className="mb-4">
+                    <h3>Performers</h3>
 
                   </Col>
                 </Row>
               }
 
               {value == "rules" &&
-                <Row className="p-lg-5 bg-white rounded-5 shadow mb-5">
-                  <Col xs={12}>
-
+                <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5">
+                  <Col xs={12} className="mb-4">
+                    <h3>Rules</h3>
+                    <ul>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed ultrices nibh.</li>
+                      <li>Donec a tempor purus, eget pharetra enim.</li>
+                      <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</li>
+                      <li>Quisque ornare purus eget ultrices vestibulum.</li>
+                      <li>Cras condimentum blandit nisi at rutrum.</li>
+                      <li>Praesent fermentum lacus at mauris sollicitudin convallis.</li>
+                    </ul>
                   </Col>
                 </Row>
               }
