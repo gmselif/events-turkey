@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
+import { Context } from '../../Context';
 
-function EventCard({ item, data, setFilteredData }) {
+function EventCard({ item }) {
   var placeholder = "https://source.unsplash.com/150x150/?event1_1"
+  const { filteredData, setFilteredData } = useContext(Context);
 
   const handleClick = () => {
-    setFilteredData(data.filter(event => event.location.toLowerCase() === item.location.toLowerCase()))
+    setFilteredData(
+      filteredData.filter(event => event.location.toLowerCase() === item.location.toLowerCase())
+    )
   }
-  
-
 
   return (
     <Col sm={12} md={6} lg={4} className="p-5 p-sm-5 py-md-3 px-md-4 px-lg-3 px-xl-4 p-xxl-5">

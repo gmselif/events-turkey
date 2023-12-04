@@ -1,11 +1,8 @@
-import { Routes, Route } from "react-router-dom";
-import routes from "../src/routes"
-import Menu from "./Components/Menu"
-import Footer from "./Components/Footer"
-import ScrollButtons from "./Components/ScrollButtons"
-
-//Bootstrap
-import Container from 'react-bootstrap/Container';
+import { Routes, Route } from 'react-router-dom'
+import routes from '../src/routes'
+import Menu from './Components/Menu'
+import Footer from './Components/Footer'
+import ScrollButtons from './Components/ScrollButtons'
 
 function App() {
   return (
