@@ -12,22 +12,6 @@ function Details() {
   const { id } = useParams();
   const { status, data } = useQuery("event", () => GetById(id))
 
-  const googleMap = [
-    {
-      city: "İstanbul",
-      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d385396.3210584263!2d28.682532381814802!3d41.00537021655295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2zAnkaraxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1701098851434!5m2!1str!2str"
-    },
-    {
-      city: "Ankara",
-      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.30043014634!2d32.597955231661956!3d39.9035232982699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara!5e0!3m2!1str!2str!4v1701154423390!5m2!1str!2str"
-    },
-    {
-      city: "İzmir",
-      url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200065.48497012627!2d26.91490723497402!3d38.41782866459973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd862a762cacd%3A0x628cbba1a59ce8fe!2zxLB6bWly!5e0!3m2!1str!2str!4v1701154497450!5m2!1str!2str"
-    },
-  ]
-
-
   const [fixed, setFixed] = useState(true)
 
   const toggleVisible = () => {
@@ -88,9 +72,12 @@ function Details() {
                       <Button variant="outline-warning" size="lg" onClick={() => setValue("tickets")}>
                         Tickets
                       </Button>
-                      <Button variant="outline-warning" size="lg" onClick={() => setValue("performers")}>
-                        Performers
-                      </Button>
+                      {/*If there are no performers, don't show PerformersButton */}
+                      {data[0].performers &&
+                        <Button variant="outline-warning" size="lg" onClick={() => setValue("performers")}>
+                          Performers
+                        </Button>
+                      }
                       <Button variant="outline-warning" size="lg" onClick={() => setValue("rules")}>
                         Rules
                       </Button>
@@ -130,7 +117,7 @@ function Details() {
                             <h6>{`${data[0].city} - ${data[0].location}`}</h6>
                           </Col>
                           <Col xs={12} className="text-warning">
-                            <i class="bi bi-easel2-fill me-4" style={{ fontSize: "1.5rem" }} />
+                            <i className="bi bi-easel2-fill me-4" style={{ fontSize: "1.5rem" }} />
                             <p className="d-inline-block">Choose your seat</p>
                           </Col>
                         </Row>
@@ -144,7 +131,7 @@ function Details() {
                           </Col>
                           <Col xs={12}>
                             <Button variant="warning" className="h-100 px-4 px-lg-5 py-0 text-uppercase" style={{ borderTopLeftRadius: "30px" }} >
-                              <i class="bi bi-basket2-fill me-lg-1 me-xl-4" style={{ fontSize: "1.5rem" }}></i>
+                              <i className="bi bi-basket2-fill me-lg-1 me-xl-4" style={{ fontSize: "1.5rem" }}></i>
                               Buy
                             </Button>
                           </Col>
@@ -156,10 +143,12 @@ function Details() {
               }{/*Buy A Ticket Section END*/}
 
               {value == "performers" &&
-                <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5">
+                <Row className="p-4 px-lg-5 pt-lg-5 bg-white rounded-5 shadow mb-5">
                   <Col xs={12} className="mb-4">
                     <h3>Performers</h3>
-
+                    <ul>
+                      {data[0].performers?.map((item, key) => <li key={key}>{item}</li>)}
+                    </ul>
                   </Col>
                 </Row>
               }
@@ -189,7 +178,7 @@ function Details() {
                 </Col>
                 <Col xs={12}>
                   <iframe
-                    src={(googleMap.find(item => item.city.toLowerCase() === data[0].city.toLowerCase())).url}
+                    src={data[0].mapUrl}
                     height="400"
                     className="w-100 rounded-5"
                     loading="lazy">

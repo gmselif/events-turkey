@@ -14,7 +14,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "theatre",
-      "price": 50
+      "price": 50,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.2397363885416!2d32.82260477577145!3d39.93602688475685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34edbf8fa7445%3A0xbefb4e098f5cfa!2sMEB%20%C5%9Eura%20Salonu!5e0!3m2!1str!2str!4v1701713849471!5m2!1str!2str",
+      "performers": ["Gizem Erdem"]
     },
     {
       "id": 2,
@@ -22,7 +24,7 @@
       "description": "24 yaş ve altı İstanbullulara kültür sanat etkinliklerinden ücretsiz faydalanma fırsatı sunan “Koltuk Senin”, şu ana kadar Borusan Müzik Evi, Süreyya Operası, Cemal Reşit Rey (CRR) Konser Salonu, Turkcell Vadi, Festival Park Yenikapı, Maximum Uniq Box, Festival Park Kadıköy ve Harbiye Cemil Topuzlu Açık Hava Tiyatrosu’nda gerçekleştirilen etkinliklerde boş koltukları ücretsiz olarak gençlerle buluşturdu.",
       "startDate": "2023-11-05",
       "endDate": "2023-11-07",
-      "location": "Çeşitli Mekânlar",
+      "location": "Şehir Tiyatroları Ümraniye Sahnesi",
       "city": "İstanbul",
       "images": [
         "https://kultur.istanbul/gorsel/2022/05/koltuk-senin-mayis-etkinlik.jpg",
@@ -30,7 +32,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "theatre",
-      "price": 30
+      "price": 30,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.007140774651!2d29.10219057582307!3d41.02509971838932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac8fab2acd1fd%3A0xaa4f69614f8e0d3c!2s%C3%9Cmraniye%20Sahnesi!5e0!3m2!1str!2str!4v1701714066050!5m2!1str!2str",
+      "performers": ["İBB", "Kültür AŞ", "Kültür Sanat Sektörü"]
     },
     {
       "id": 3,
@@ -46,7 +50,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "theatre",
-      "price": 25
+      "price": 25,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.007140774651!2d29.10219057582307!3d41.02509971838932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac8fab2acd1fd%3A0xaa4f69614f8e0d3c!2s%C3%9Cmraniye%20Sahnesi!5e0!3m2!1str!2str!4v1701714066050!5m2!1str!2str",
+      "performers": ["Emre Koyuncuoğlu"]
     },
     {
       "id": 4,
@@ -54,7 +60,7 @@
       "description": "Oyun,12 Eylül darbesi dönemini en acı şekilde yaşayıp parçalanan bir ailenin bugüne uzanan hikâyesini konu alıyor. Leyla, ailesinin geçmişiyle yüzleşiyor ve onların hikayesini anlatabilmek için hayatını değiştirmeyi göze alıyor.",
       "startDate": "2024-01-10",
       "endDate": "2024-01-12",
-      "location": "Müze Gazhane Meydan Sahne",
+      "location": "Müze Gazhane",
       "city": "İstanbul",
       "images": [
         "https://kultur.istanbul/gorsel/2022/02/kimse-oyle-seyleri-konusmuyor-artik-sehir-tiyatrolari.jpg",
@@ -62,7 +68,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "theatre",
-      "price": 40
+      "price": 40,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.3283537545253!2d29.04005567582165!3d40.996185820169735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab80b23ed2915%3A0x4bdfeb36fc52e4c1!2sM%C3%BCze%20Gazhane!5e0!3m2!1str!2str!4v1701714284367!5m2!1str!2str",
+      "performers": ["Şirin Gürbüz"]
     },
     {
       "id": 5,
@@ -70,7 +78,7 @@
       "description": "Markalar Festivali’nde İstanbulluların kış dönemi ve yılbaşı arifesinde Türkiye’nin seçkin markalarının kaliteli ve hesaplı ürünlerine erişebilmesi için önemli bir fırsat zemini yaratılırken, öte yandan İstanbul Vakfı’nın “Büyüt Hayallerini” sosyal sorumluluk projesi kapsamında can suyu olacak.",
       "startDate": "2024-02-15",
       "endDate": "2024-02-17",
-      "location": "Festival Park Kadıköy",
+      "location": "Festival Park",
       "city": "İstanbul",
       "images": [
         "https://kultur.istanbul/gorsel/2023/11/POST-KARE...jpeg",
@@ -78,7 +86,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "festival",
-      "price": 55
+      "price": 55,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.54930769076!2d29.01225828534379!3d40.991348746616794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9eb3e6e8129%3A0x83b3879a0989f12f!2sFestival%20Park!5e0!3m2!1str!2str!4v1701714378222!5m2!1str!2str",
+      "performers": ""
     },
     {
       "id": 6,
@@ -94,7 +104,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "standup",
-      "price": 35
+      "price": 35,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.3283537545253!2d29.04005567582165!3d40.996185820169735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab80b23ed2915%3A0x4bdfeb36fc52e4c1!2sM%C3%BCze%20Gazhane!5e0!3m2!1str!2str!4v1701714284367!5m2!1str!2str",
+      "performers": ["Deniz Alnıtemiz"]
     },
     {
       "id": 7,
@@ -110,11 +122,13 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "concert",
-      "price": 20
+      "price": 20,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3123.363855728748!2d27.07212347570449!3d38.47924527126905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbdb472f2b4571%3A0x8df8592eab471267!2sHilltown%20Kar%C5%9F%C4%B1yaka%20AVM!5e0!3m2!1str!2str!4v1701714658780!5m2!1str!2str",
+      "performers": ["Sıla"]
     },
     {
       "id": 8,
-      "name": "Doğu Demirkol",
+      "name": "Doğu Demirkol Standup",
       "description": "Stand up gösterisini kapalı gişe oynayan Ahlat Ağacı, Ölümlü Dünya, Bayi Toplantısı filmlerindeki başarılı performansının ardından,  ‘Doğu’ dizisinin ilk sezonunun çekimlerini tamamlayan komedyen sevenleriyle buluşmaya hazırlanıyor. Türkiye, Avrupa ve Amerika’da ve dünyanın farklı şehirlerinde gerçekleştirdiği tek kişilik gösterisinde kendi yaşamından ve bu topraklarda güldürü niteliği taşıyan her olaydan beslenen Doğu Demirkol, bu sezon da seyircisi ile buluşmaya hazırlanıyor.",
       "startDate": "2024-05-10",
       "endDate": "2024-05-12",
@@ -126,7 +140,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "standup",
-      "price": 60
+      "price": 60,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.4437508992787!2d27.094828084504258!3d38.4543155000865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd99685bbe4b9%3A0xca349245a356b169!2zU3VhdCBUYcWfZXIgQcOnxLFrIEhhdmEgVGl5YXRyb3N1!5e0!3m2!1str!2str!4v1701714571159!5m2!1str!2str",
+      "performers": ["Doğu Demirkol"]
     },
     {
       "id": 9,
@@ -142,7 +158,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "festival",
-      "price": 45
+      "price": 45,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3123.955680538789!2d27.14266667570382!3d38.46558447206781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd85bb5b25caf%3A0x7ff73ed3ea77427f!2s%C4%B0zmir%20Arena!5e0!3m2!1str!2str!4v1701714513288!5m2!1str!2str",
+      "performers": ""
     },
     {
       "id": 10,
@@ -158,7 +176,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "festival",
-      "price": 30
+      "price": 30,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3123.955680538789!2d27.14266667570382!3d38.46558447206781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd85bb5b25caf%3A0x7ff73ed3ea77427f!2s%C4%B0zmir%20Arena!5e0!3m2!1str!2str!4v1701714513288!5m2!1str!2str",
+      "performers": ["Güneş", "Kum"]
     },
     {
       "id": 11,
@@ -174,7 +194,9 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "concert",
-      "price": 25
+      "price": 25,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.3381304966697!2d32.80033417577025!3d39.91144868623798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1701714459830!5m2!1str!2str",
+      "performers": ["Yıldız Tilbe"]
     },
     {
       "id": 12,
@@ -190,11 +212,11 @@
         "https://source.unsplash.com/150x150/?event1_3"
       ],
       "eventType": "concert",
-      "price": 25
+      "price": 25,
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.3381304966697!2d32.80033417577025!3d39.91144868623798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1701714459830!5m2!1str!2str",
+      "performers": ["Ajda Pekkan"]
     }
   ],
-
-
   "users": [
     {
       "id": 1,
