@@ -16,12 +16,12 @@ function EventCard({ item }) {
   }
 
   return (
-    <Col sm={12} md={6} lg={4} className="p-5 p-sm-5 py-md-3 px-md-4 px-lg-3 px-xl-4 p-xxl-5">
-      <Card className="h-100 rounded-1 overflow-hidden">
+    <Col xs={10} sm={6} lg={4} xl={3} className="px-5 px-sm-1 px-md-4 px-lg-3 px-xl-2 px-xxl-3">
+      <Card className="h-100 rounded-1 overflow-hidden shadow-lg">
         <Link to={`/${item.id}`} className="text-decoration-none">
           <Card.Img
             variant="top"
-            className="px-5 py-3"
+            className="px-3 pt-3"
             style={{ height: "270px" }}
             src={item.images[0] ? item.images[0] : placeholder}
           />
@@ -31,17 +31,14 @@ function EventCard({ item }) {
           <Card.Text className="text-truncate">
             {item.description}
           </Card.Text>
-          <Card.Text className="text-truncate text-secondary">
-            <b>City:</b> {item.city}
-          </Card.Text>
           <Link to="/" onClick={handleClick} className="text-decoration-none">
-            <Card.Text className="text-truncate text-secondary">
-              <b>Location:</b> {item.location}
+            <Card.Text className="text-truncate text-dark">
+              <i className="bi bi-geo-alt-fill" /> {`${item.city} - ${item.location}`}
             </Card.Text>
           </Link>
 
-          <Card.Text className="text-truncate text-secondary">
-            <b>Date: </b>{item.startDate} - {item.endDate}
+          <Card.Text className="text-truncate text-dark">
+            <i class="bi bi-stopwatch-fill" /> {item.startDate} - {item.endDate}
           </Card.Text>
           <Button variant="warning" className="w-100 rounded-pill">{item.price ? `${item.price} $` : "Free"}</Button>
         </Card.Body>
