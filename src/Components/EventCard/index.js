@@ -38,7 +38,7 @@ function EventCard({ item }) {
           </Link>
 
           <Card.Text className="text-truncate text-dark">
-            <i class="bi bi-stopwatch-fill" /> {item.startDate} - {item.endDate}
+            <i className="bi bi-stopwatch-fill" /> {item.startDate} - {item.endDate}
           </Card.Text>
           <Button variant="warning" className="w-100 rounded-pill">{item.price ? `${item.price} $` : "Free"}</Button>
         </Card.Body>
