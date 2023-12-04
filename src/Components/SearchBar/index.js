@@ -1,7 +1,33 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { useQuery } from 'react-query'
+import GetAll from '../../Network/GetAll'
+import { Context } from '../../Context'
 
-function SearchBar({ searchText, handleChange, searchbarHandleSubmit }) {
+function SearchBar() {
+  const { data } = useQuery("events", GetAll)
+  const { setFilteredData } = useContext(Context);
+  const [searchText, setSearchText] = useState("")
+
+  const searchHandleChange = (e) => {
+    setSearchText(e.target.value)
+  }
+
+  //Handle Search Bar Operations
+  const searchbarHandleSubmit = (e) => {
+    e.preventDefault();
+
+    var result = searchText ? data.filter(item =>
+      item.name.toLowerCase().includes(searchText.toLowerCase()) ||
+      item.location.toLowerCase().includes(searchText) ||
+      item.city.toLowerCase().includes(searchText) ||
+      item.eventType.toLowerCase().includes(searchText)
+    ) : alert("You have to fill in")
+
+    setFilteredData(result)
+    setSearchText("")
+  }
+
   return (
     <Container fluid="lg">
       <Container className="bg-dark mt-5 p-3 rounded-pill">
@@ -12,7 +38,7 @@ function SearchBar({ searchText, handleChange, searchbarHandleSubmit }) {
                 className="w-100 form-control form-control-lg rounded-pill"
                 type="text"
                 value={searchText}
-                onChange={handleChange}
+                onChange={searchHandleChange}
                 placeholder="Etkinlik, sanatçı, şehir veya mekan arayın"
               />
             </Col>
@@ -23,7 +49,6 @@ function SearchBar({ searchText, handleChange, searchbarHandleSubmit }) {
         </Form>
       </Container>
     </Container>
-
   )
 }
 
