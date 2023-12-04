@@ -8,8 +8,8 @@ function EventCardWrapper() {
   const { filteredData } = useContext(Context);
 
   return (
-    <Container className='container pb-5'>
-      <Row>
+    <Container className='container my-5'>
+      <Row className="row-gap-5 justify-content-center justify-content-sm-start">
           {
             filteredData.map(item => {
               return <EventCard key={item.id} item={item}></EventCard>
