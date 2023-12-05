@@ -15,6 +15,8 @@ function EventCard({ item }) {
     )
   }
 
+  const minPrice = Math.min(...Object.values(item.price))
+
   return (
     <Col xs={10} sm={6} lg={4} xl={3} className="px-5 px-sm-1 px-md-4 px-lg-3 px-xl-2 px-xxl-3">
       <Card className="h-100 rounded-1 overflow-hidden shadow-lg">
@@ -40,7 +42,9 @@ function EventCard({ item }) {
           <Card.Text className="text-truncate text-dark">
             <i className="bi bi-stopwatch-fill" /> {item.startDate} - {item.endDate}
           </Card.Text>
-          <Button variant="warning" className="w-100 rounded-pill">{item.price ? `${item.price} $` : "Free"}</Button>
+          <Button variant="warning" className="w-100 rounded-pill">
+            {item.price ? `${minPrice} $` : `Free`}
+          </Button>
         </Card.Body>
       </Card>
     </Col>
