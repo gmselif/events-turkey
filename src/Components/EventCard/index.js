@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Context } from '../../Context'
 import Moment from 'react-moment'
 import 'moment-timezone'
+import slugify from 'react-slugify';
 
 function EventCard({ item }) {
   var placeholder = "https://source.unsplash.com/150x150/?event1_1"
@@ -20,7 +21,7 @@ function EventCard({ item }) {
   return (
     <Col xs={10} sm={6} lg={4} xl={3} className="px-5 px-sm-1 px-md-4 px-lg-3 px-xl-2 px-xxl-3">
       <Card className="h-100 rounded-1 overflow-hidden shadow-lg">
-        <Link to={`/${item.id}`} className="text-decoration-none">
+        <Link to={`/${slugify(item.name)}`} className="text-decoration-none">
           <Card.Img
             variant="top"
             className="px-3 pt-3"

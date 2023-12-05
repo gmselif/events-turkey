@@ -16,7 +16,7 @@ const routes = [
     element: <Home />
   },
   {
-    path: "/:id",
+    path: "/:name",
     element: <Details />
   },
   {
@@ -24,7 +24,7 @@ const routes = [
     element: <Concerts />
   },
   {
-    path: "/Concerts/:id",
+    path: "/Concerts/:name",
     element: <Details />
   },
   {
