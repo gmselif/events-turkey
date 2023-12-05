@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import { Link } from "react-router-dom";
-import { Context } from '../../Context';
+import { Col, Card, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { Context } from '../../Context'
+import Moment from 'react-moment'
+import 'moment-timezone'
 
 function EventCard({ item }) {
   var placeholder = "https://source.unsplash.com/150x150/?event1_1"
@@ -35,12 +35,14 @@ function EventCard({ item }) {
           </Card.Text>
           <Link to="/" onClick={handleClick} className="text-decoration-none">
             <Card.Text className="text-truncate text-dark">
-              <i className="bi bi-geo-alt-fill" /> {`${item.city} - ${item.location}`}
+              <i className="bi bi-geo-alt-fill me-1" /> 
+              {`${item.city} - ${item.location}`}
             </Card.Text>
           </Link>
 
           <Card.Text className="text-truncate text-dark">
-            <i className="bi bi-stopwatch-fill" /> {item.startDate} - {item.endDate}
+            <i className="bi bi-stopwatch-fill me-1" />
+            <Moment format='DD MMM YYYY' date={item.startDate} /> - <Moment format='DD MMM YYYY' date={item.endDate} />
           </Card.Text>
           <Button variant="warning" className="w-100 rounded-pill">
             {item.price ? `${minPrice} $` : `Free`}

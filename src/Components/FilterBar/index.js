@@ -3,14 +3,17 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { useQuery } from 'react-query'
 import GetAll from '../../Network/GetAll'
 import { Context } from '../../Context'
+import Moment from 'react-moment'
+import 'moment-timezone'
+import moment from 'moment';
 
 function FilterBar() {
   const { data } = useQuery("events", GetAll)
-  const { setFilteredData } = useContext(Context);
+  const { filteredData, setFilteredData } = useContext(Context);
   const [city, setCity] = useState("")
   const [location, setLocation] = useState("")
-  const [startDate, setStartDate] = useState(null)
-  const [endDate, setEndDate] = useState(null)
+  const [startDate, setStartDate] = useState("")
+  const [endDate, setEndDate] = useState("")
 
   //Handle Change Functions
   const cityHandleChange = (e) => {
@@ -20,12 +23,10 @@ function FilterBar() {
     setLocation(e.target.value)
   }
   const startDateHandleChange = (e) => {
-    setStartDate(e.target.value)
-    console.log(startDate)
+    setStartDate(moment(e.target.value).format("YYYY-MM-DD"))
   }
   const endDateHandleChange = (e) => {
-    setEndDate(e.target.value)
-    console.log(endDate)
+    setEndDate(moment(e.target.value).format("YYYY-MM-DD"))
   }
 
   //Make Cities select options
@@ -66,7 +67,7 @@ function FilterBar() {
     var filterByStartDate = []
     var filterByEndDate = []
 
-    var result = data.filter(item => {
+    var result = filteredData.filter(item => {
       filterByCity = []
       filterByLocation = []
       filterByStartDate = []
@@ -74,8 +75,8 @@ function FilterBar() {
 
       city ? (item.city.toLowerCase() === city.toLowerCase() && filterByCity.push(item)) : filterByCity.push(true)
       location ? (item.location.toLowerCase() === location.toLowerCase() && filterByLocation.push(item)) : filterByLocation.push(true)
-      startDate ? (item.startDate > startDate && filterByStartDate.push(item)) : filterByStartDate.push(true)
-      endDate ? (item.startDate < endDate && filterByEndDate.push(item)) : filterByEndDate.push(true)
+      startDate ? (moment(item.startDate).diff(startDate, "days") > 0 && filterByStartDate.push(item)) : filterByStartDate.push(true)
+      endDate ? (moment(endDate).diff(item.startDate, "days") > 0 && filterByEndDate.push(item)) : filterByEndDate.push(true)
 
       return filterByCity[0] && filterByLocation[0] && filterByStartDate[0] && filterByEndDate[0]
     })
@@ -113,14 +114,14 @@ function FilterBar() {
             <Col xs={6} xl={2} className="mb-3 mb-xl-0">
               <input
                 type='date'
-                value={startDate ? startDate : new Date()}
+                value={startDate}
                 onChange={startDateHandleChange}
                 className="w-100 form-control form-control-lg rounded-pill" />
             </Col>
             <Col xs={6} xl={2} className="mb-3 mb-xl-0">
               <input
                 type='date'
-                value={endDate ? endDate : new Date()}
+                value={endDate}
                 onChange={endDateHandleChange}
                 placeholder='DD-MM-YYYY'
                 className="w-100 form-control form-control-lg rounded-pill" />
