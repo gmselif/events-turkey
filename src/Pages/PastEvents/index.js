@@ -1,19 +1,23 @@
-import React from 'react'
-import { useQuery } from "react-query"
+import React, { useEffect, useContext } from 'react'
+import { useQuery } from 'react-query'
 import GetAll from '../../Network/GetAll'
-import Slider from "../../Components/Slider"
-import NavigationButtons from "../../Components/NavigationButtons"
-import EventCardWrapper from '../../Components/EventCardWrapper';
+import Slider from '../../Components/Slider'
+import NavigationButtons from '../../Components/NavigationButtons'
+import EventCardWrapper from '../../Components/EventCardWrapper'
+import { Context } from '../../Context'
+import 'moment-timezone'
+import moment from 'moment'
 
 function PastEvents() {
   const { status, data } = useQuery("events", GetAll)
+  const { filteredData, setFilteredData } = useContext(Context);
 
   //Returns true if the event has expired.
-  const isPast = (date) => {
-    const today = new Date();
-    const eventDate = new Date(date);
-    return (eventDate.getTime() - today.getTime()) < 0 ? true : false
-  }
+  useEffect(() => {
+    setFilteredData(data?.filter(event =>
+      moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') <= 0
+    ))
+  }, [data])
 
   return (
     <div>
@@ -23,9 +27,7 @@ function PastEvents() {
         <>
           <Slider />
           <NavigationButtons />
-            {
-              <EventCardWrapper key={"wrapper"} items={data.filter(item => isPast(item.startDate))} />
-            }
+          {filteredData && <EventCardWrapper />}
         </>
       )}
     </div>
