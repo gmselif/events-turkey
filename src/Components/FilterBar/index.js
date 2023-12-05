@@ -3,7 +3,6 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { useQuery } from 'react-query'
 import GetAll from '../../Network/GetAll'
 import { Context } from '../../Context'
-import Moment from 'react-moment'
 import 'moment-timezone'
 import moment from 'moment';
 
@@ -53,7 +52,12 @@ function FilterBar() {
 
   const handleClearButton = () => {
     ClearFilter()
-    setFilteredData(data)
+
+    const futureData = data.filter(event =>
+      moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') > 0
+    )
+    
+    setFilteredData(futureData)
   }
 
   //Handle Filter Operation
@@ -67,7 +71,11 @@ function FilterBar() {
     var filterByStartDate = []
     var filterByEndDate = []
 
-    var result = filteredData.filter(item => {
+    const futureData = data.filter(event =>
+      moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') > 0
+    )
+
+    var result = futureData?.filter(item => {
       filterByCity = []
       filterByLocation = []
       filterByStartDate = []

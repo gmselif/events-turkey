@@ -7,12 +7,19 @@ import Slider from '../../Components/Slider'
 import SearchBar from '../../Components/SearchBar'
 import FilterBar from '../../Components/FilterBar'
 import { Context } from '../../Context'
+import 'moment-timezone'
+import moment from 'moment';
 
 function Home() {
   const { status, data } = useQuery("events", GetAll)
   const { filteredData, setFilteredData } = useContext(Context);
 
-  useEffect(() => { setFilteredData(data) }, [data])
+  //Don't show the past events.
+  useEffect(() => { 
+    setFilteredData(data?.filter(event => 
+      moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') > 0
+    )) 
+  }, [data])
 
   return (
     <>
