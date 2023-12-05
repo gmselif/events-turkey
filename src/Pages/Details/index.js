@@ -1,45 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useQuery } from "react-query";
-import GetById from '../../Network/GetById'
+import GetAll from '../../Network/GetAll'
 import { useParams } from 'react-router-dom'
 import Slider from '../../Components/Slider'
 import ShareButtons from '../../Components/ShareButtons';
 import { Container, Row, Col, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap'
 import Breadcrumbs from '../../Components/Breadcrumbs'
 import { Link } from "react-router-dom";
+import slugify from 'react-slugify';
+import { replace } from 'formik';
 
 function Details() {
-  const { id } = useParams();
-  const { status, data } = useQuery("event", () => GetById(id))
-
-  const [fixed, setFixed] = useState(true)
-
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-
-    if (scrolled <= 400) {
-      setFixed(true)
-    } else if (scrolled > 400) {
-      setFixed(false)
-    }
-  };
-  window.addEventListener('scroll', toggleVisible);
+  const { status, data } = useQuery("event", GetAll)
 
   const [value, setValue] = useState("")
+
+  const { name } = useParams();
+  const [item1, setItem1] = useState()
+
+  useEffect(() => {
+    setItem1(
+      data?.find(event => slugify(event.name) == name)
+    )
+  }, [data])
 
 
   return (
     <>
       {status === "error" && <p>Error fetching data</p>}
       {status === "loading" && <p>Fetching data...</p>}
-      {status === "success" && (
+      {status === "success" && item1 && (
         <Container className="mt-5">
           <Row className="column-gap-5 justify-content-center">
             <Col xs={12} className="mt-5 pt-5">
-              <Breadcrumbs eventName={data[0].name} />
+              <Breadcrumbs eventName={item1.name} />
             </Col>
             <Col xs={12} md={3}>{/*Picture*/}
-              <Slider pictures={data[0].images} />
+              <Slider pictures={item1.images} />
             </Col>
 
             {/* Right Column */}
@@ -48,12 +45,12 @@ function Details() {
               {/* Explanation Section */}
               <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5">
                 <Col xs={12}>
-                  <h2>{data[0].name}</h2>
+                  <h2>{item1.name}</h2>
                 </Col>
                 <Col xs={12}>
                   <i className="bi bi-tag-fill text-warning me-3" style={{ fontSize: "1.5rem" }} />
                   <p className="d-inline-block text-secondary text-capitalize" style={{ fontSize: "1.2rem" }}>
-                    {data[0].eventType}
+                    {item1.eventType}
                   </p>
                 </Col>
                 <Col xs={12} className="rounded-4 p-4 mb-5" style={{ backgroundColor: "#f1f1f1" }}>
@@ -62,14 +59,14 @@ function Details() {
                       <h5>Event Description</h5>
                     </Col>
                     <Col xs={12}>
-                      {data[0].description}
+                      {item1.description}
                     </Col>
                   </Row>
                 </Col>
                 <Col xs={12}>
                   <Row>
                     <Col xs={12} lg={8}>
-                      {data[0].price ? (
+                      {item1.price ? (
                         //If there is at least one price value, show clickable TicketsButton. 
                         //Else, show unclickable FreeButton.
                         <Button variant="outline-warning" size="lg" onClick={() => setValue("tickets")}>
@@ -81,7 +78,7 @@ function Details() {
                         </Button>
                       )}
                       {/*If there are no performers, don't show PerformersButton */}
-                      {data[0].performers &&
+                      {item1.performers &&
                         <Button variant="outline-warning" size="lg" onClick={() => setValue("performers")}>
                           Performers
                         </Button>
@@ -118,10 +115,10 @@ function Details() {
                       <Col xs={8}>
                         <Row>
                           <Col xs={12} className="text-dark-emphasis">
-                            <h5>{data[0].startDate}</h5>
+                            <h5>{item1.startDate}</h5>
                           </Col>
                           <Col xs={12} className="text-dark-emphasis mb-4">
-                            <h6>{`${data[0].city} - ${data[0].location}`}</h6>
+                            <h6>{`${item1.city} - ${item1.location}`}</h6>
                           </Col>
                           <Col xs={12} className="text-warning">
                             <i className="bi bi-easel2-fill me-4" style={{ fontSize: "1.5rem" }} />
@@ -134,7 +131,7 @@ function Details() {
                           <Col xs={12}>
                             <p className="text-secondary my-0 me-4">Starts from</p>
                             <p style={{ fontSize: "30px" }} className="me-4 my-0">
-                              {Math.min(...Object.values(data[0].price))} $
+                              {Math.min(...Object.values(item1.price))} $
                             </p>
                           </Col>
                           <Col xs={12}>
@@ -155,7 +152,7 @@ function Details() {
                   <Col xs={12} className="mb-4">
                     <h3>Performers</h3>
                     <ul>
-                      {data[0].performers?.map((item, key) => <li key={key}>{item}</li>)}
+                      {item1.performers?.map((item, key) => <li key={key}>{item}</li>)}
                     </ul>
                   </Col>
                 </Row>
@@ -182,11 +179,11 @@ function Details() {
               {/* Google Map Section */}
               <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5 gap-4 text-center text-capitalize">
                 <Col xs={12}>
-                  <h3>{`${data[0].city} - ${data[0].location}`}</h3>
+                  <h3>{`${item1.city} - ${item1.location}`}</h3>
                 </Col>
                 <Col xs={12}>
                   <iframe
-                    src={data[0].mapUrl}
+                    src={item1.mapUrl}
                     height="400"
                     className="w-100 rounded-5"
                     loading="lazy">
@@ -200,7 +197,7 @@ function Details() {
                   <h3>share this page on social media</h3>
                 </Col>
                 <Col xs={12}>
-                  <ShareButtons eventName={data[0].name} eventType={data[0].eventType} eventDescription={data[0].description} />
+                  <ShareButtons eventName={item1.name} eventType={item1.eventType} eventDescription={item1.description} />
                 </Col>
               </Row>
 
