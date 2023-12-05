@@ -69,9 +69,17 @@ function Details() {
                 <Col xs={12}>
                   <Row>
                     <Col xs={12} lg={8}>
-                      <Button variant="outline-warning" size="lg" onClick={() => setValue("tickets")}>
-                        Tickets
-                      </Button>
+                      {data[0].price ? (
+                        //If there is at least one price value, show clickable TicketsButton. 
+                        //Else, show unclickable FreeButton.
+                        <Button variant="outline-warning" size="lg" onClick={() => setValue("tickets")}>
+                          Tickets
+                        </Button>
+                      ) : (
+                        <Button variant="outline-warning" size="lg" >
+                          Free
+                        </Button>
+                      )}
                       {/*If there are no performers, don't show PerformersButton */}
                       {data[0].performers &&
                         <Button variant="outline-warning" size="lg" onClick={() => setValue("performers")}>
@@ -93,7 +101,7 @@ function Details() {
               </Row>{/* Explanation Section END*/}
 
               {/*Buy A Ticket Section*/}
-              {value == "tickets" && data[0].price &&
+              {value == "tickets" &&
                 <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5">
                   <Col xs={12} className="mb-4">
                     <Row className="align-items-center justify-content-between">
@@ -105,7 +113,6 @@ function Details() {
                       </Col>
                     </Row>
                   </Col>
-
                   <Col xs={12} className="border border-1 border-secondary rounded-5 text-black ps-4 pt-3 pb-0 pe-0 overflow-hidden">
                     <Row>
                       <Col xs={8}>
@@ -125,8 +132,9 @@ function Details() {
                       <Col xs={4} className="text-end">
                         <Row className='h-100'>
                           <Col xs={12}>
-                            <p style={{ fontSize: "30px" }} className="me-4">
-                              {data[0].price} $
+                            <p className="text-secondary my-0 me-4">Starts from</p>
+                            <p style={{ fontSize: "30px" }} className="me-4 my-0">
+                              {Math.min(...Object.values(data[0].price))} $
                             </p>
                           </Col>
                           <Col xs={12}>
