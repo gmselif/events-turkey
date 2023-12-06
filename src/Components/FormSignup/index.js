@@ -1,8 +1,8 @@
 import React from 'react'
 import Validation from './Validation'
 import { Link } from 'react-router-dom'
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 function FormSignup() {
   return (

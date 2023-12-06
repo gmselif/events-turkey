@@ -1,29 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import { useQuery } from "react-query";
+import { useQuery } from 'react-query'
 import GetAll from '../../Network/GetAll'
 import { useParams } from 'react-router-dom'
 import Slider from '../../Components/Slider'
-import ShareButtons from '../../Components/ShareButtons';
-import { Container, Row, Col, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap'
+import ShareButtons from '../../Components/ShareButtons'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import Breadcrumbs from '../../Components/Breadcrumbs'
-import { Link } from "react-router-dom";
-import slugify from 'react-slugify';
-import { replace } from 'formik';
+import slugify from 'react-slugify'
 
 function Details() {
   const { status, data } = useQuery("event", GetAll)
+  const { name } = useParams();
 
   const [value, setValue] = useState("")
-
-  const { name } = useParams();
   const [item1, setItem1] = useState()
 
   useEffect(() => {
     setItem1(
-      data?.find(event => slugify(event.name) == name)
+      data?.find(event => slugify(event.name) === name)
     )
-  }, [data])
-
+  }, [data, name])
 
   return (
     <>
@@ -98,7 +94,7 @@ function Details() {
               </Row>{/* Explanation Section END*/}
 
               {/*Buy A Ticket Section*/}
-              {value == "tickets" &&
+              {value === "tickets" &&
                 <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5">
                   <Col xs={12} className="mb-4">
                     <Row className="align-items-center justify-content-between">
@@ -147,7 +143,7 @@ function Details() {
                 </Row>
               }{/*Buy A Ticket Section END*/}
 
-              {value == "performers" &&
+              {value === "performers" &&
                 <Row className="p-4 px-lg-5 pt-lg-5 bg-white rounded-5 shadow mb-5">
                   <Col xs={12} className="mb-4">
                     <h3>Performers</h3>
@@ -158,7 +154,7 @@ function Details() {
                 </Row>
               }
 
-              {value == "rules" &&
+              {value === "rules" &&
                 <Row className="p-4 p-lg-5 bg-white rounded-5 shadow mb-5">
                   <Col xs={12} className="mb-4">
                     <h3>Rules</h3>
@@ -183,6 +179,7 @@ function Details() {
                 </Col>
                 <Col xs={12}>
                   <iframe
+                    title='map1'
                     src={item1.mapUrl}
                     height="400"
                     className="w-100 rounded-5"
