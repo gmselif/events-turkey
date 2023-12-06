@@ -1,7 +1,8 @@
 import React from 'react'
 import Validation from './Validation'
 import { Link } from 'react-router-dom'
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 function FormSignup() {
   return (
@@ -16,97 +17,105 @@ function FormSignup() {
       <Container>
         <Row className="mb-5 pb-5 justify-content-around flex-lg-row-reverse">
           <Col xs={11} md={12} lg={6}>{/*Second(Right) Yellow Box */}
-            <Row className="p-4 p-md-5 mb-5 p-lg-2 pb-lg-4 p-xl-5 bg-warning gap-4 rounded-5" style={{ marginTop: "-100px" }}>
-              <Col xs={12}>
-                <Row className="justify-content-center">
-                  <Col xs={6}>
-                    <i className="bi bi-person-fill" style={{ fontSize: "3rem" }}></i>
-                    <h1 style={{ display: "inline-block", marginLeft: "10px" }}>Sign Up</h1>
+            <Formik
+              initialValues={{
+                firstName: '',
+                lastName: '',
+                email: '',
+                password: '',
+              }}
+              validationSchema={Validation}
+              onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                  alert(JSON.stringify(values, null, 2));
+                  setSubmitting(false);
+                }, 400)
+              }}
+            >
+              <Form>
+                <Row className="p-4 p-md-5 mb-5 p-lg-2 pb-lg-4 p-xl-5 bg-warning gap-4 rounded-5" style={{ marginTop: "-100px" }}>
+                  <Col xs={12}>
+                    <Row className="justify-content-center">
+                      <Col xs={6}>
+                        <i className="bi bi-person-fill" style={{ fontSize: "3rem" }}></i>
+                        <h1 style={{ display: "inline-block", marginLeft: "10px" }}>Sign Up</h1>
+                      </Col>
+                    </Row>
                   </Col>
-                </Row>
-              </Col>
-              <Col xs={12}>
-                <input
-                  id="firstName"
-                  name="firstName"
-                  placeholder="First Name"
-                  type="text"
-                  className="w-100 py-3 ps-4 rounded-5"
-                //onChange={formik.handleChange}
-                //value={formik.values.firstName}
-                />
-              </Col>
-              <Col xs={12}>
-                <input
-                  id="lastName"
-                  name="lastName"
-                  placeholder="Last Name"
-                  type="text"
-                  className="w-100 py-3 ps-4 rounded-5"
-                //onChange={formik.handleChange}
-                //value={formik.values.lastName}
-                />
-              </Col>
-              <Col xs={12}>
-                <input
-                  id="email"
-                  name="email"
-                  placeholder="Email"
-                  type="email"
-                  className="w-100 py-3 ps-4 rounded-5"
-                //onChange={formik.handleChange}
-                //value={formik.values.email}
-                />
-              </Col>
-              <Col xs={12}>
-                <input
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  className="w-100 py-3 ps-4 rounded-5"
-                //onChange={formik.handleChange}
-                //value={formik.values.email}
-                />
-              </Col>
-              <Col xs={12}>
-                <Row className="align-items-center">
-                  <Col xs={1}>
-                    <input
-                      id="checkbox1"
-                      name="checkbox1"
-                      type="checkbox"
-                      style={{ transform: "scale(2)" }}
-                    //onChange={formik.handleChange}
-                    //value={formik.values.email}
+                  <Col xs={12}>
+                    <Field
+                      name="firstName"
+                      placeholder="First Name"
+                      type="text"
+                      className="w-100 py-3 ps-4 rounded-5"
                     />
+                    <ErrorMessage name="firstName" />
+
                   </Col>
-                  <Col xs={11}>
-                    <label htmlFor="checkbox1">Ön Bilgilendirme Koşullarını ve Mesafeli Satış Sözleşmesini Okudum.</label>
-                  </Col>
-                </Row>
-              </Col>
-              <Col xs={12}>
-                <Row className="align-items-center">
-                  <Col xs={1}>
-                    <input
-                      id="checkbox2"
-                      name="checkbox2"
-                      type="checkbox"
-                      style={{ transform: "scale(2)" }}
-                    //onChange={formik.handleChange}
-                    //value={formik.values.email}
+                  <Col xs={12}>
+                    <Field
+                      name="lastName"
+                      placeholder="Last Name"
+                      type="text"
+                      className="w-100 py-3 ps-4 rounded-5"
                     />
+                    <ErrorMessage name="lastName" />
                   </Col>
-                  <Col xs={11}>
-                    <label htmlFor="checkbox2">Bubilet.com.tr bültenlerine abone olmak istiyorum.</label>
+                  <Col xs={12}>
+                    <Field
+                      name="email"
+                      placeholder="Email"
+                      type="email"
+                      className="w-100 py-3 ps-4 rounded-5"
+                    />
+                    <ErrorMessage name="email" />
+                  </Col>
+                  <Col xs={12}>
+                    <Field
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                      className="w-100 py-3 ps-4 rounded-5"
+                      autoComplete="on"
+                    />
+                    <ErrorMessage name="password" />
+                  </Col>
+                  <Col xs={12}>
+                    <Row className="align-items-center">
+                      <Col xs={1}>
+                        <Field
+                          name="checkbox1"
+                          type="checkbox"
+                          style={{ transform: "scale(2)" }}
+                        />
+                      </Col>
+                      <Col xs={11}>
+                        <label htmlFor="checkbox1">Ön Bilgilendirme Koşullarını ve Mesafeli Satış Sözleşmesini Okudum.</label>
+                        <ErrorMessage name="checkbox1" />
+
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={12}>
+                    <Row className="align-items-center">
+                      <Col xs={1}>
+                        <input
+                          name="checkbox2"
+                          type="checkbox"
+                          style={{ transform: "scale(2)" }}
+                        />
+                      </Col>
+                      <Col xs={11}>
+                        <label htmlFor="checkbox2">Bubilet.com.tr bültenlerine abone olmak istiyorum.</label>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={12}>
+                    <Button type="submit" variant="dark" className="w-100 py-3 rounded-5">Sign Up</Button>
                   </Col>
                 </Row>
-              </Col>
-              <Col xs={12}>
-                <Button type="submit" variant="dark" className="w-100 py-3 rounded-5">Sign Up</Button>
-              </Col>
-            </Row>
+              </Form>
+            </Formik>
           </Col>
           <Col xs={11} md={12} lg={6} className="pe-lg-5">{/*First(Left) Yellow Box */}
             <Row className="p-4 p-sm-5 px-lg-3 py-lg-4 px-xl-5 py-xl-5 bg-warning rounded-bottom-5">
@@ -159,7 +168,7 @@ function FormSignup() {
             </Row>
           </Col>
         </Row>
-      </Container>
+      </Container >
     </>
   )
 }
