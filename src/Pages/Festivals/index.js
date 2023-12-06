@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import { useQuery } from "react-query";
-import GetFestivals from '../../Network/GetFestivals'
+import GetAll from '../../Network/GetAll'
 import Slider from "../../Components/Slider"
 import NavigationButtons from "../../Components/NavigationButtons"
 import EventCardWrapper from '../../Components/EventCardWrapper';
+import { Context } from '../../Context'
+import 'moment-timezone'
+import moment from 'moment'
 
 function Festivals() {
-  const { status, data } = useQuery("events", GetFestivals)
+  const { status, data } = useQuery("events", GetAll)
+  const { filteredData, setFilteredData } = useContext(Context);
+
+  //Don't show the past events.
+  useEffect(() => { 
+    setFilteredData(data?.filter(event => 
+      moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') > 0
+      && event.eventType.toLowerCase() === "festival" 
+    )) 
+  }, [data])
 
   return (
     <div>
