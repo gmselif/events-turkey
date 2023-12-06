@@ -8,7 +8,7 @@ import SearchBar from '../../Components/SearchBar'
 import FilterBar from '../../Components/FilterBar'
 import { Context } from '../../Context'
 import 'moment-timezone'
-import moment from 'moment';
+import moment from 'moment'
 
 function Home() {
   const { status, data } = useQuery("events", GetAll)
