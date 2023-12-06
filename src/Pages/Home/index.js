@@ -1,6 +1,4 @@
 import React, { useEffect, useContext } from 'react'
-import { useQuery } from 'react-query'
-import GetAll from '../../Network/GetAll'
 import EventCardWrapper from '../../Components/EventCardWrapper'
 import NavigationButtons from '../../Components/NavigationButtons'
 import Slider from '../../Components/Slider'
@@ -11,8 +9,7 @@ import 'moment-timezone'
 import moment from 'moment'
 
 function Home() {
-  const { status, data } = useQuery("events", GetAll)
-  const { filteredData, setFilteredData } = useContext(Context);
+  const { filteredData, setFilteredData, status, data } = useContext(Context);
 
   //Don't show the past events.
   useEffect(() => { 
