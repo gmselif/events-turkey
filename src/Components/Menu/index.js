@@ -17,6 +17,12 @@ function Menu() {
     ))
   }
 
+  const pastEventsHandleClick = () => {
+    setFilteredData(data?.filter(event =>
+      moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') <= 0
+    ))
+  }
+
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark" fixed="top">
       <Container /* fluid="lg"*/>
@@ -39,14 +45,14 @@ function Menu() {
             <Link to="/" onClick={showFutureEvents} className="nav-link text-light">
               Events
             </Link>
+            <Link to="/PastEvents" onClick={pastEventsHandleClick} className="nav-link text-light">
+              Past Events
+            </Link>
             <Link to="/AboutUs" className="nav-link text-light">
               About Us
             </Link>
             <Link to="/ContactUs" className="nav-link text-light">
               Contact Us
-            </Link>
-            <Link to="/PastEvents" className="nav-link text-light">
-              Past Events
             </Link>
           </Nav>
           <Nav>

@@ -92,7 +92,6 @@ function FormSignup() {
                       <Col xs={11}>
                         <label htmlFor="checkbox1">Ön Bilgilendirme Koşullarını ve Mesafeli Satış Sözleşmesini Okudum.</label>
                         <ErrorMessage name="checkbox1" />
-
                       </Col>
                     </Row>
                   </Col>
