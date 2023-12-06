@@ -1,8 +1,22 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-import { Container, Navbar, Nav, Button } from 'react-bootstrap';
+import React, { useContext } from 'react'
+import { useQuery } from 'react-query'
+import GetAll from '../../Network/GetAll'
+import { Context } from '../../Context'
+import { Link } from 'react-router-dom'
+import { Container, Navbar, Nav, Button } from 'react-bootstrap'
+import 'moment-timezone'
+import moment from 'moment'
 
 function Menu() {
+  const { data } = useQuery("events", GetAll)
+  const { setFilteredData } = useContext(Context);
+
+  const showFutureEvents = () => {
+    setFilteredData(data?.filter(event =>
+      moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') > 0
+    ))
+  }
+
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark" fixed="top">
       <Container /* fluid="lg"*/>
@@ -10,6 +24,7 @@ function Menu() {
 
         <Navbar.Brand>
           <Link to="/"
+            onClick={showFutureEvents}
             className="text-warning pe-sm-auto text-decoration-none"
             style={{ fontSize: "36px" }}
           >
@@ -21,7 +36,7 @@ function Menu() {
 
         <Navbar.Collapse id="responsive-navbar-nav" className="bg-dark">
           <Nav className="me-auto">
-            <Link to="/" className="nav-link text-light">
+            <Link to="/" onClick={showFutureEvents} className="nav-link text-light">
               Events
             </Link>
             <Link to="/AboutUs" className="nav-link text-light">
