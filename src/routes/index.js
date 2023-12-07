@@ -20,59 +20,59 @@ const routes = [
     element: <Details />
   },
   {
-    path: "/Concerts",
+    path: "/concerts",
     element: <Concerts />
   },
   {
-    path: "/Concerts/:name",
+    path: "/concerts/:name",
     element: <Details />
   },
   {
-    path: "/Theaters",
+    path: "/theaters",
     element: <Theaters />
   },
   {
-    path: "/Theaters/:id",
+    path: "/theaters/:id",
     element: <Details />
   },
   {
-    path: "/Festivals",
+    path: "/festivals",
     element: <Festivals />
   },
   {
-    path: "/Festivals/:id",
+    path: "/festivals/:id",
     element: <Details />
   },
   {
-    path: "/Standups",
+    path: "/standups",
     element: <Standups />
   },
   {
-    path: "/Standups/:id",
+    path: "/standups/:id",
     element: <Details />
   },
   {
-    path: "/PastEvents",
+    path: "/past-events",
     element: <PastEvents />
   },
   {
-    path: "/PastEvents/:id",
+    path: "/past-events/:id",
     element: <Details />
   },
   {
-    path: "/AboutUs",
+    path: "/aboutus",
     element: <AboutUs />
   },
   {
-    path: "/ContactUs",
+    path: "/contactus",
     element: <ContactUs />
   },
   {
-    path: "/Signin",
+    path: "/signin",
     element: <Signin />
   },
   {
-    path: "/Signup",
+    path: "/signup",
     element: <Signup />
   }
 ]

@@ -115,7 +115,7 @@ function FilterBar() {
                 value={location}
                 onChange={locationHandleChange}
                 className="w-100 form-control-lg rounded-pill">
-                <option value="" defaultValue>Mekanlar...</option>
+                <option value="" defaultValue>Locations...</option>
                 {LocationOptions()}
               </select>
             </Col>

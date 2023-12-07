@@ -45,23 +45,23 @@ function Menu() {
             <Link to="/" onClick={showFutureEvents} className="nav-link text-light">
               Events
             </Link>
-            <Link to="/PastEvents" onClick={pastEventsHandleClick} className="nav-link text-light">
+            <Link to="/past-events" onClick={pastEventsHandleClick} className="nav-link text-light">
               Past Events
             </Link>
-            <Link to="/AboutUs" className="nav-link text-light">
+            <Link to="/aboutus" className="nav-link text-light">
               About Us
             </Link>
-            <Link to="/ContactUs" className="nav-link text-light">
+            <Link to="/contactus" className="nav-link text-light">
               Contact Us
             </Link>
           </Nav>
           <Nav>
-            <Link to="/Signin" className="nav-link text-light">
+            <Link to="/signin" className="nav-link text-light">
               <Button variant="warning">
                 Sign In
               </Button>
             </Link>
-            <Link to="/Signup" className="nav-link text-light">
+            <Link to="/signup" className="nav-link text-light">
               <Button variant="warning">
                 Sign Up
               </Button>
