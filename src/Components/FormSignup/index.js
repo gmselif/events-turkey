@@ -23,6 +23,7 @@ function FormSignup() {
                 lastName: '',
                 email: '',
                 password: '',
+                checkbox1: '',
               }}
               validationSchema={Validation}
               onSubmit={(values, { setSubmitting }) => {
@@ -49,8 +50,13 @@ function FormSignup() {
                       type="text"
                       className="w-100 py-3 ps-4 rounded-5"
                     />
-                    <ErrorMessage name="firstName" />
-
+                    <ErrorMessage name="firstName">
+                      {msg =>
+                        <div className="bg-danger text-light rounded-5 ps-3 py-2 mt-2">
+                          {msg}
+                        </div>
+                      }
+                    </ErrorMessage>
                   </Col>
                   <Col xs={12}>
                     <Field
@@ -59,7 +65,13 @@ function FormSignup() {
                       type="text"
                       className="w-100 py-3 ps-4 rounded-5"
                     />
-                    <ErrorMessage name="lastName" />
+                    <ErrorMessage name="lastName">
+                      {msg =>
+                        <div className="bg-danger text-light rounded-5 ps-3 py-2 mt-2">
+                          {msg}
+                        </div>
+                      }
+                    </ErrorMessage>
                   </Col>
                   <Col xs={12}>
                     <Field
@@ -68,7 +80,13 @@ function FormSignup() {
                       type="email"
                       className="w-100 py-3 ps-4 rounded-5"
                     />
-                    <ErrorMessage name="email" />
+                    <ErrorMessage name="email">
+                      {msg =>
+                        <div className="bg-danger text-light rounded-5 ps-3 py-2 mt-2">
+                          {msg}
+                        </div>
+                      }
+                    </ErrorMessage>
                   </Col>
                   <Col xs={12}>
                     <Field
@@ -78,7 +96,13 @@ function FormSignup() {
                       className="w-100 py-3 ps-4 rounded-5"
                       autoComplete="on"
                     />
-                    <ErrorMessage name="password" />
+                    <ErrorMessage name="password">
+                      {msg =>
+                        <div className="bg-danger text-light rounded-5 ps-3 py-2 mt-2">
+                          {msg}
+                        </div>
+                      }
+                    </ErrorMessage>
                   </Col>
                   <Col xs={12}>
                     <Row className="align-items-center">
@@ -91,7 +115,13 @@ function FormSignup() {
                       </Col>
                       <Col xs={11}>
                         <label htmlFor="checkbox1">Ön Bilgilendirme Koşullarını ve Mesafeli Satış Sözleşmesini Okudum.</label>
-                        <ErrorMessage name="checkbox1" />
+                        <ErrorMessage name="checkbox1">
+                          {msg =>
+                            <div className="bg-danger text-light rounded-5 ps-3 py-2 mt-2">
+                              {msg}
+                            </div>
+                          }
+                        </ErrorMessage>
                       </Col>
                     </Row>
                   </Col>
