@@ -34,7 +34,7 @@ function FormSignin() {
                 <Row className="p-4 p-md-5 mb-5 p-lg-2 pb-lg-4 p-xl-5 bg-warning gap-4 rounded-5" style={{ marginTop: "-100px" }}>
                   <Col xs={12}>
                     <Row className="justify-content-center">
-                      <Col xs={6}>
+                      <Col xs={6} className="text-center">
                         <i className="bi bi-person-fill" style={{ fontSize: "3rem" }}></i>
                         <h1 style={{ display: "inline-block", marginLeft: "10px" }}>Sign In</h1>
                       </Col>

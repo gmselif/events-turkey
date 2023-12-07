@@ -39,7 +39,7 @@ function SearchBar() {
                 type="text"
                 value={searchText}
                 onChange={searchHandleChange}
-                placeholder="Etkinlik, sanatçı, şehir veya mekan arayın"
+                placeholder="Search for event, artist, city or venue"
               />
             </Col>
             <Col xs={3} md={2} className="text-end">

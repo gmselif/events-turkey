@@ -41,28 +41,28 @@ function NavigationButtons() {
       <Container className="p-3">
         <Row className="justify-content-center">
           <Col xs={6} md={3} className="mb-3 mb-md-0">
-            <Link to="/Concerts" onClick={concertHandleClick}>
+            <Link to="/concerts" onClick={concertHandleClick}>
               <Button variant="warning" size="lg" className="w-100 py-3 py-xl-4 rounded-4">
                 Concerts
               </Button>
             </Link>
           </Col>
           <Col xs={6} md={3}>
-            <Link to="/Theaters" onClick={theatreHandleClick}>
+            <Link to="/theaters" onClick={theatreHandleClick}>
               <Button variant="warning" size="lg" className="w-100 py-3 py-xl-4 rounded-4">
                 Theaters
               </Button>
             </Link>
           </Col>
           <Col xs={6} md={3}>
-            <Link to="/Festivals" onClick={festivalHandleClick}>
+            <Link to="/festivals" onClick={festivalHandleClick}>
               <Button variant="warning" size="lg" className="w-100 py-3 py-xl-4 rounded-4">
                 Festivals
               </Button>
             </Link>
           </Col>
           <Col xs={6} md={3} className="text-lg-center">
-            <Link to="/Standups" onClick={standupHandleClick}>
+            <Link to="/standups" onClick={standupHandleClick}>
               <Button variant="warning" size="lg" className="w-100 py-3 py-xl-4 rounded-4">
                 Standups
               </Button>

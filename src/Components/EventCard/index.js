@@ -19,7 +19,7 @@ function EventCard({ item }) {
   const minPrice = Math.min(...Object.values(item.price))
 
   return (
-    <Col xs={10} sm={6} lg={4} xl={3} className="px-5 px-sm-1 px-md-4 px-lg-3 px-xl-2 px-xxl-3">
+    <Col xs={10} sm={6} lg={4} xl={3} className="px-3 px-sm-1 px-md-4 px-lg-3 px-xl-2 px-xxl-3">
       <Card className="h-100 rounded-1 overflow-hidden shadow-lg">
         <Link to={`/${slugify(item.name)}`} className="text-decoration-none">
           <Card.Img
