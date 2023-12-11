@@ -7,7 +7,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 function FormSignin() {
   return (
     <>
-      <div className="bg-dark mt-5 p-5 w-100">
+      <div className="bg-dark mt-5 p-5 w-100 position-relative z-2">
         <Container className="pt-5 pb-2">
           <h3 className="text-warning" style={{ fontWeight: "300" }}>Events Turkey Sign In</h3>
           <p className="text-secondary mb-5 pb-3 pb-lg mb-lg-0" style={{ fontSize: "1.2rem" }}>Welcome, you can log in to your account.</p>
@@ -16,7 +16,8 @@ function FormSignin() {
 
       <Container>
         <Row className="mb-5 pb-5 justify-content-around flex-lg-row-reverse">
-          <Col xs={11} md={12} lg={6}>{/*Second(Right) Yellow Box */}
+          {/*First(Right) Yellow Box */}
+          <Col xs={11} md={12} lg={6} className="z-3">
             <Formik
               initialValues={{
                 email: '',
@@ -69,7 +70,8 @@ function FormSignin() {
                           {msg}
                         </div>
                       }
-                    </ErrorMessage>                  </Col>
+                    </ErrorMessage>
+                  </Col>
                   <Col xs={12}>
                     <Row className="align-items-center">
                       <Col xs={1}>
@@ -91,8 +93,9 @@ function FormSignin() {
               </Form>
             </Formik>
           </Col>
-          <Col xs={11} md={12} lg={6} className="pe-lg-5">{/*First(Left) Yellow Box */}
-            <Row className="px-4 py-5 px-lg-3 py-lg-4 px-xl-5 py-xl-5 bg-warning rounded-bottom-5">
+          {/*Second(Left) Yellow Box */}
+          <Col xs={11} md={12} lg={6} className="pe-lg-5 z-1" style={{ marginTop: "-30px" }}>
+            <Row className="px-4 py-5 px-lg-3 px-xl-5 bg-warning rounded-5">
               <Col xs={12} className="border-bottom border-dark mb-4 pb-3 text-center">
                 <h4>Don't have an Events Turkey account?</h4>
                 <Link to="/Signup" className="text-light text-decoration-none">

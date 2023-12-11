@@ -7,6 +7,8 @@ import ShareButtons from '../../Components/ShareButtons'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import Breadcrumbs from '../../Components/Breadcrumbs'
 import slugify from 'react-slugify'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip';
 
 function Details() {
   const { status, data } = useQuery("event", GetAll)
@@ -59,9 +61,10 @@ function Details() {
                     </Col>
                   </Row>
                 </Col>
+                {/*Button Section*/}
                 <Col xs={12}>
-                  <Row>
-                    <Col xs={12} lg={8}>
+                  <Row className="align-items-center">
+                    <Col xs={9} lg={11}>
                       {item1.price ? (
                         //If there is at least one price value, show clickable TicketsButton. 
                         //Else, show unclickable FreeButton.
@@ -83,11 +86,20 @@ function Details() {
                         Rules
                       </Button>
                     </Col>
-                    <Col xs={12} lg={4} className="text-lg-end mt-4 mt-lg-0">
-                      <Button variant="danger" size="lg">
-                        Add Favorities
-                        <i className="bi bi-heart-fill text-white ms-1 ms-lg-3" />
-                      </Button>
+                    <Col xs={1} className="text-lg-end">
+                      <OverlayTrigger
+                        delay={{ hide: 450, show: 300 }}
+                        overlay={(props) => (
+                          <Tooltip {...props}>
+                            Add to Favorites
+                          </Tooltip>
+                        )}
+                        placement="bottom"
+                      >
+                        <Button variant="danger" size="lg" className="rounded-circle">
+                          <i className="bi bi-heart-fill text-white" />
+                        </Button>
+                      </OverlayTrigger>
                     </Col>
                   </Row>
                 </Col>
@@ -106,27 +118,27 @@ function Details() {
                       </Col>
                     </Row>
                   </Col>
-                  <Col xs={12} className="border border-1 border-secondary rounded-5 text-black ps-4 pt-3 pb-0 pe-0 overflow-hidden">
+                  <Col xs={12} className="border border-1 border-secondary rounded-5 text-black ps-2 ps-sm-4 pt-3 pb-0 pe-0 overflow-hidden">
                     <Row>
-                      <Col xs={8}>
-                        <Row>
+                      <Col xs={8} sm={8}>
+                        <Row className="h-100">
                           <Col xs={12} className="text-dark-emphasis">
                             <h5>{item1.startDate}</h5>
                           </Col>
                           <Col xs={12} className="text-dark-emphasis mb-4">
                             <h6>{`${item1.city} - ${item1.location}`}</h6>
                           </Col>
-                          <Col xs={12} className="text-warning">
-                            <i className="bi bi-easel2-fill me-4" style={{ fontSize: "1.5rem" }} />
+                          <Col xs={12} className="text-warning align-self-end">
+                            <i className="bi bi-easel2-fill me-2 me-md-3" style={{ fontSize: "1.5rem" }} />
                             <p className="d-inline-block">Choose your seat</p>
                           </Col>
                         </Row>
                       </Col>
-                      <Col xs={4} className="text-end">
+                      <Col xs={4} sm={4} className="text-end">
                         <Row className='h-100'>
                           <Col xs={12}>
-                            <p className="text-secondary my-0 me-4">Starts from</p>
-                            <p style={{ fontSize: "30px" }} className="me-4 my-0">
+                            <p className="text-secondary my-0 me-2 me-sm-4">Starts from</p>
+                            <p style={{ fontSize: "30px" }} className="me-2 my-0 me-sm-4">
                               {Math.min(...Object.values(item1.price))} $
                             </p>
                           </Col>
@@ -199,9 +211,10 @@ function Details() {
               </Row>
 
             </Col>
-          </Row>
-        </Container>
-      )}
+          </Row >
+        </Container >
+      )
+      }
     </>
   )
 }
