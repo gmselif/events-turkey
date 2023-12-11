@@ -9,6 +9,7 @@ import Standups from "../Pages/Standups"
 import Details from "../Pages/Details"
 import Signin from "../Pages/Signin"
 import Signup from "../Pages/Signup"
+import Favorites from "../Pages/favorites"
 
 const routes = [
   {
@@ -74,6 +75,10 @@ const routes = [
   {
     path: "/signup",
     element: <Signup />
+  },
+  {
+    path: "/favorites",
+    element: <Favorites />
   }
 ]
 
