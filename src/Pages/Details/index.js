@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useQuery } from 'react-query'
-import GetAll from '../../Network/GetAll'
+import React, { useEffect, useState, useContext } from 'react'
+import { Context } from '../../Context'
 import { useParams } from 'react-router-dom'
 import Slider from '../../Components/Slider'
 import ShareButtons from '../../Components/ShareButtons'
@@ -11,11 +10,17 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip';
 
 function Details() {
-  const { status, data } = useQuery("event", GetAll)
   const { name } = useParams();
+  const { status, data, favorites, setFavorites } = useContext(Context);
 
   const [value, setValue] = useState("")
   const [item1, setItem1] = useState()
+
+  const handleFavoritesClick = () => {
+    favorites 
+    && !favorites.some(event => event.id == item1.id) 
+    && setFavorites([...favorites, item1])
+  }
 
   useEffect(() => {
     setItem1(
@@ -86,6 +91,7 @@ function Details() {
                         Rules
                       </Button>
                     </Col>
+                    {/*Add to Favorites Button*/}
                     <Col xs={1} className="text-lg-end">
                       <OverlayTrigger
                         delay={{ hide: 450, show: 300 }}
@@ -96,7 +102,12 @@ function Details() {
                         )}
                         placement="bottom"
                       >
-                        <Button variant="danger" size="lg" className="rounded-circle">
+                        <Button
+                          variant="danger"
+                          size="lg"
+                          className="rounded-circle"
+                          onClick={handleFavoritesClick}
+                        >
                           <i className="bi bi-heart-fill text-white" />
                         </Button>
                       </OverlayTrigger>
