@@ -7,7 +7,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 function FormSignup() {
   return (
     <>
-      <div className="bg-dark mt-5 p-5 w-100">
+      <div className="bg-dark mt-5 p-5 w-100 position-relative z-2">
         <Container className="pt-5 pb-2">
           <h3 className="text-warning" style={{ fontWeight: "300" }}>Events Turkey Sign Up</h3>
           <p className="text-secondary mb-5 pb-3 pb-lg mb-lg-0" style={{ fontSize: "1.2rem" }}>Welcome, you can quickly become a member.</p>
@@ -16,7 +16,8 @@ function FormSignup() {
 
       <Container>
         <Row className="mb-5 pb-5 justify-content-around flex-lg-row-reverse">
-          <Col xs={11} md={12} lg={6}>{/*Second(Right) Yellow Box */}
+          {/*First(Right) Yellow Box */}
+          <Col xs={11} md={12} lg={6} className="z-3">
             <Formik
               initialValues={{
                 firstName: '',
@@ -146,11 +147,12 @@ function FormSignup() {
               </Form>
             </Formik>
           </Col>
-          <Col xs={11} md={12} lg={6} className="pe-lg-5">{/*First(Left) Yellow Box */}
-            <Row className="p-4 p-sm-5 px-lg-3 py-lg-4 px-xl-5 py-xl-5 bg-warning rounded-bottom-5">
+          {/*Second(Left) Yellow Box */}
+          <Col xs={11} md={12} lg={6} className="pe-lg-5 z-1" style={{marginTop:"-30px"}}>
+            <Row className="p-4 p-sm-5 px-lg-3 px-xl-5 bg-warning rounded-5">
               <Col xs={12} className="border-bottom border-dark mb-4 pb-3">
                 <Row className="align-items-center">
-                  <Col xs={3}>
+                  <Col xs={4} sm={3}>
                     <i className="bi bi-award" style={{ fontSize: "5rem" }}></i>
                   </Col>
                   <Col xs={8}>
@@ -158,11 +160,10 @@ function FormSignup() {
                     <p>We work for your satisfaction without causing any inconvenience.</p>
                   </Col>
                 </Row>
-
               </Col>
               <Col xs={12} className="border-bottom border-dark mb-4 pb-3">
                 <Row>
-                  <Col xs={3}>
+                  <Col xs={4} sm={3}>
                     <i className="bi bi-cash-coin" style={{ fontSize: "5rem" }}></i>
                   </Col>
                   <Col xs={8}>
@@ -173,21 +174,21 @@ function FormSignup() {
               </Col>
               <Col xs={12} className="border-bottom border-dark mb-4 pb-3">
                 <Row>
-                  <Col xs={3}>
+                  <Col xs={4} sm={3}>
                     <i className="bi bi-ticket-perforated" style={{ fontSize: "5rem" }}></i>
                   </Col>
-                  <Col xs={9}>
+                  <Col xs={8} sm={9}>
                     <h2>The Easiest Way To Buy Tickets</h2>
                     <p>Receive your tickets both via SMS and e-mail, without having to print them.</p>
                   </Col>
                 </Row>
               </Col>
               <Col xs={12}>
-                <Row>
-                  <Col xs={9}>
+                <Row className="align-items-center">
+                  <Col xs={7} md={9}>
                     <p>If you have an account you can sign in.</p>
                   </Col>
-                  <Col xs={3}>
+                  <Col xs={5} md={3}>
                     <Link to="/Signin">
                       <Button variant="dark" className="w-100 rounded-5">Sign In</Button>
                     </Link>

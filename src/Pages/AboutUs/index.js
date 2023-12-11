@@ -1,14 +1,14 @@
 import React from 'react'
-import aboutUs from '../../assets/Pictures/aboutUs.png'
+import aboutus from '../../assets/Pictures/aboutus.png'
 import profilePicture from '../../assets/Pictures/profilePicture.png'
 import { Container, Row, Col, Image } from 'react-bootstrap'
 
 function AboutUs() {
   return (
-    <Container fluid="xs" style={{ marginTop: "10vh" }}>
-      <Row>
-        <Col style={{height: "40vh", overflow:"hidden"}}>
-          <Image src={aboutUs} style={{ width:"100%" }} />
+    <Container fluid="xs" className="mt-5 pt-4">
+      <Row className="overflow-hidden mb-5" style={{maxHeight: "50vh"}}>
+        <Col>
+          <Image src={aboutus} className="w-100" />
         </Col>
       </Row>
       <Row className="mb-5 ms-2 mt-md-5 justify-content-center align-items-center">
