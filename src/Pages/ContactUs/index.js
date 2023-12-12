@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container, Row, Col, Image, Button, Form } from 'react-bootstrap'
-import contactUs from '../../assets/Pictures/contactUs.png'
+import { Container, Row, Col, Image, Button } from 'react-bootstrap'
+import contactUs from '../../assets/contactUs.png'
 
 function ContactUs() {
 

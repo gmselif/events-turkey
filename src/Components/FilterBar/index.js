@@ -8,7 +8,7 @@ import moment from 'moment';
 
 function FilterBar() {
   const { data } = useQuery("events", GetAll)
-  const { filteredData, setFilteredData } = useContext(Context);
+  const { setFilteredData } = useContext(Context);
   const [city, setCity] = useState("")
   const [location, setLocation] = useState("")
   const [startDate, setStartDate] = useState("")

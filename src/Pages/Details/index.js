@@ -18,7 +18,7 @@ function Details() {
 
   const handleFavoritesClick = () => {
     favorites 
-    && !favorites.some(event => event.id == item1.id) 
+    && !favorites.some(event => event.id === item1.id) 
     && setFavorites([...favorites, item1])
   }
 

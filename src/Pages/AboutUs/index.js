@@ -1,6 +1,6 @@
 import React from 'react'
-import aboutus from '../../assets/Pictures/aboutus.png'
-import profilePicture from '../../assets/Pictures/profilePicture.png'
+import aboutus from '../../assets/aboutus.png'
+import profilePicture from '../../assets/profilePicture.png'
 import { Container, Row, Col, Image } from 'react-bootstrap'
 
 function AboutUs() {

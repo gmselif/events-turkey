@@ -20,13 +20,13 @@ function EventCard({ item }) {
 
   const handleFavoriteClick = () => {
     favorites
-      && !favorites.some(event => event.id == item.id)
+      && !favorites.some(event => event.id === item.id)
       && setFavorites([...favorites, item])
   }
 
   const handleFavDelete = () => {
-    setFilteredData(filteredData.filter(event => event.id != item.id))
-    setFavorites(filteredData.filter(event => event.id != item.id))
+    setFilteredData(filteredData.filter(event => event.id !== item.id))
+    setFavorites(filteredData.filter(event => event.id !== item.id))
   }
 
   const minPrice = Math.min(...Object.values(item.price))
