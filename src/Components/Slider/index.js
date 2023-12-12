@@ -1,20 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types';
 import { Carousel, Image } from 'react-bootstrap';
 
 //Pictures
-import picture1 from '../../assets/Pictures/picture1.png'
-import picture2 from '../../assets/Pictures/picture2.png'
-import picture3 from '../../assets/Pictures/picture3.png'
-import picture4 from '../../assets/Pictures/picture4.png'
+import picture1 from '../../assets/picture1.png'
+import picture2 from '../../assets/picture2.png'
+import picture3 from '../../assets/picture3.png'
+import picture4 from '../../assets/picture4.png'
 
 function Slider({ pictures }) {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
-
   return (
     <Carousel fade className="mt-5 w-100 overflow-hidden" /*style={{maxHeight: "60vh"}}*/>
       {

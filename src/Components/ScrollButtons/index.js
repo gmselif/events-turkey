@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import "bootstrap-icons/font/bootstrap-icons.css"
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 function ScrollButtons() {
   const [visibleUp, setVisibleUp] = useState(false)
