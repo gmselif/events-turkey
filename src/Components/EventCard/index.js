@@ -24,6 +24,11 @@ function EventCard({ item }) {
       && setFavorites([...favorites, item])
   }
 
+  const handleFavDelete = () => {
+    setFilteredData(filteredData.filter(event => event.id != item.id))
+    setFavorites(filteredData.filter(event => event.id != item.id))
+  }
+
   const minPrice = Math.min(...Object.values(item.price))
 
   return (
@@ -36,15 +41,24 @@ function EventCard({ item }) {
             style={{ height: "270px" }}
             src={item.images[0] ? item.images[0] : placeholder}
           />
-          {!showFavButton &&
-            <i class="bi bi-x-circle-fill text-warning px-3 pt-2 bg-light shadow-lg position-absolute" style={{ fontSize: "2rem", top: "0", right: "0" }}></i>
-          }
         </Link>
+        {!showFavButton &&
+          <i
+            onClick={handleFavDelete}
+            className="bi bi-x-circle-fill text-warning px-3 pt-2 bg-light shadow-lg position-absolute"
+            style={{ fontSize: "2rem", top: "0", right: "0", cursor: "pointer" }}
+          />
+        }
+
         <Card.Body>
-          <Card.Title className="text-truncate">{item.name}</Card.Title>
-          <Card.Text className="text-truncate">
-            {item.description}
-          </Card.Text>
+          <Link to={`/${slugify(item.name)}`} className="text-decoration-none">
+            <Card.Title className="text-truncate text-dark">
+              {item.name}
+            </Card.Title>
+            <Card.Text className="text-truncate text-dark">
+              {item.description}
+            </Card.Text>
+          </Link>
 
           <Link to="/" onClick={handleClick} className="text-decoration-none">
             <Card.Text className="text-truncate text-dark">
