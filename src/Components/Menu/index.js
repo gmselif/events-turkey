@@ -9,22 +9,27 @@ import moment from 'moment'
 
 function Menu() {
   const { data } = useQuery("events", GetAll)
-  const { setFilteredData, favorites } = useContext(Context);
+  const { setFilteredData, favorites, setShowFavButton } = useContext(Context);
 
   const showFutureEvents = () => {
     setFilteredData(data?.filter(event =>
       moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') > 0
     ))
+    setShowFavButton(true)
   }
 
   const pastEventsHandleClick = () => {
     setFilteredData(data?.filter(event =>
       moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') <= 0
     ))
+    setShowFavButton(true)
   }
 
   const handleFavorites = () => {
-    favorites && setFilteredData(favorites)
+    if (favorites) {
+      setShowFavButton(false) 
+      setFilteredData(favorites)
+    }
   }
 
   return (

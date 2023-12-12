@@ -2,10 +2,19 @@ import React, { useContext } from 'react'
 import EventCardWrapper from '../../Components/EventCardWrapper'
 import { Context } from '../../Context'
 import { Container, Row, Col, Button } from 'react-bootstrap'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
+import 'moment-timezone'
+import moment from 'moment'
 
 function Favorites() {
-  const { status, favorites } = useContext(Context)
+  const { data, status, favorites, setFilteredData, setShowFavButton } = useContext(Context)
+
+  const showFutureEvents = () => {
+    setFilteredData(data?.filter(event =>
+      moment(event.startDate).diff(moment().format("YYYY-MM-DD"), 'days') > 0
+    ))
+    setShowFavButton(true)
+  }
 
   return (
     <div className="mt-5 pt-5">
@@ -22,7 +31,7 @@ function Favorites() {
               <i className="bi bi-bookmark-heart-fill text-warning" style={{ fontSize: "8rem" }} />
             </Col>
             <Col xs={12} className="my-5 text-center">
-              You have did not choose any favorite event. Would you like to choose <Link to="/" >one?</Link>
+              You have did not choose any favorite event. Would you like to choose <Link to="/" onClick={showFutureEvents} >one?</Link>
             </Col>
           </Row>
         </Container>

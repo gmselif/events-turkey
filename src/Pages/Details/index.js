@@ -7,7 +7,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import Breadcrumbs from '../../Components/Breadcrumbs'
 import slugify from 'react-slugify'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip';
+import Tooltip from 'react-bootstrap/Tooltip'
 
 function Details() {
   const { name } = useParams();

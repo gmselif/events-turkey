@@ -8,6 +8,7 @@ export function ContextProvider ({children}) {
   const { status, data } = useQuery("events", GetAll)
   const [filteredData, setFilteredData] = useState()
   const [favorites, setFavorites] = useState([])
+  const [showFavButton, setShowFavButton] = useState(true)
 
   const values = {
     filteredData, 
@@ -15,7 +16,9 @@ export function ContextProvider ({children}) {
     status,
     data,
     favorites, 
-    setFavorites
+    setFavorites,
+    showFavButton, 
+    setShowFavButton
   }
 
   return (
