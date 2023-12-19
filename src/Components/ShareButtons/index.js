@@ -21,7 +21,7 @@ import {
 
 
 function ShareButtons({ eventName, eventType, eventDescription }) {
-  const shareUrl = 'https://github.com/gmselif';
+  const shareUrl = 'https://events-turkey.vercel.app/';
 
   return (
     <Row className="justify-content-around">
