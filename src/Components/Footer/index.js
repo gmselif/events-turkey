@@ -30,7 +30,7 @@ function Footer() {
             <ul className="list-unstyled">
               <li><Link to="/" className={linkStyle} >Home</Link></li>
               <li><Link to="/AboutUs" className={linkStyle} >About Us</Link></li>
-              <li><Link to="/PastEvents" className={linkStyle} >Past Events</Link></li>
+              <li><Link to="/past-events" className={linkStyle} >Past Events</Link></li>
             </ul>
           </Col>
 
