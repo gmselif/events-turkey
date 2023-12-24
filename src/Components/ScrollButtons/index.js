@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import "bootstrap-icons/font/bootstrap-icons.css"
+import UpArrow from './upArrow'
+import BottomArrow from './bottomArrow'
 
+//This component is used in App.js file.
 function ScrollButtons() {
   const [visibleUp, setVisibleUp] = useState(false)
   const [visibleDown, setVisibleDown] = useState(true)
@@ -29,20 +32,6 @@ function ScrollButtons() {
 
   window.addEventListener('scroll', toggleVisible);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth'
-    });
-  }
-
   return (
     <div style={{
       position: "fixed",
@@ -52,18 +41,9 @@ function ScrollButtons() {
       cursor: "pointer",
       color: "#ffc107"
     }}>
-      <div>
-        <i className="bi bi-arrow-up-circle-fill"
-          onClick={scrollToTop}
-          style={{ fontSize: "2rem", display: visibleUp ? 'inline' : 'none' }}
-        />
-      </div>
-      <div xs={12}>
-        <i className="bi bi-arrow-down-circle-fill"
-          onClick={scrollToBottom}
-          style={{ fontSize: "2rem", display: visibleDown ? 'inline' : 'none' }}
-        />
-      </div>
+      <UpArrow visibleUp={visibleUp}/>
+      <BottomArrow visibleDown={visibleDown}/>
+      
     </div>
   );
 }
