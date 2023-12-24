@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useQuery } from 'react-query'
-import GetAll from '../../Network/GetAll'
-import { Context } from '../../Context'
+import GetAll from '../../network/getAll'
+import { Context } from '../../context'
 
 function SearchBar() {
   const { data } = useQuery("events", GetAll)

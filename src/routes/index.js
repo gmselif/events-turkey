@@ -1,15 +1,16 @@
-import Home from "../Pages/Home"
-import AboutUs from "../Pages/AboutUs"
-import ContactUs from "../Pages/ContactUs"
-import PastEvents from "../Pages/PastEvents"
-import Concerts from "../Pages/Concerts"
-import Theaters from "../Pages/Theaters"
-import Festivals from "../Pages/Festivals"
-import Standups from "../Pages/Standups"
-import Details from "../Pages/Details"
-import Signin from "../Pages/Signin"
-import Signup from "../Pages/Signup"
-import Favorites from "../Pages/favorites"
+import Home from "../pages/home"
+import AboutUs from "../pages/aboutUs"
+import ContactUs from "../pages/contactUs"
+import PastEvents from "../pages/pastEvents"
+import Concerts from "../pages/concerts"
+import Theatres from "../pages/theatres"
+import Festivals from "../pages/festivals"
+import Standups from "../pages/standups"
+import Details from "../pages/details"
+import Signin from "../pages/signin"
+import Signup from "../pages/signup"
+import Favorites from "../pages/favorites"
+import NotFound from "../pages/notFound"
 
 const routes = [
   {
@@ -29,11 +30,11 @@ const routes = [
     element: <Details />
   },
   {
-    path: "/theaters",
-    element: <Theaters />
+    path: "/theatres",
+    element: <Theatres />
   },
   {
-    path: "/theaters/:id",
+    path: "/theatres/:name",
     element: <Details />
   },
   {
@@ -41,7 +42,7 @@ const routes = [
     element: <Festivals />
   },
   {
-    path: "/festivals/:id",
+    path: "/festivals/:name",
     element: <Details />
   },
   {
@@ -49,7 +50,7 @@ const routes = [
     element: <Standups />
   },
   {
-    path: "/standups/:id",
+    path: "/standups/:name",
     element: <Details />
   },
   {
@@ -57,7 +58,7 @@ const routes = [
     element: <PastEvents />
   },
   {
-    path: "/past-events/:id",
+    path: "/past-events/:name",
     element: <Details />
   },
   {
@@ -79,6 +80,10 @@ const routes = [
   {
     path: "/favorites",
     element: <Favorites />
+  },
+  {
+    path: "*",
+    element: <NotFound />
   }
 ]
 

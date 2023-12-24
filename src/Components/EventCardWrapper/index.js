@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
-import EventCard from '../EventCard'
+import EventCard from '../eventCard'
 import { Container } from 'react-bootstrap'
 import Row from 'react-bootstrap/Row';
-import { Context } from '../../Context';
+import { Context } from '../../context';
 
 function EventCardWrapper() {
   const { filteredData } = useContext(Context);
