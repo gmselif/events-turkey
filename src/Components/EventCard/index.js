@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Row, Col, Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { Context } from '../../context'
+import { Context } from '../../Context'
 import Moment from 'react-moment'
 import 'moment-timezone'
 import slugify from 'react-slugify'

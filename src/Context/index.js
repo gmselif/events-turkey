@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { useQuery } from 'react-query'
-import GetAll from '../network/getAll'
+import GetAll from '../Network/GetAll'
 
 export const Context = createContext();
 

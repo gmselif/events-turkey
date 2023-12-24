@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import EventCardWrapper from '../../components/eventCardWrapper'
-import { Context } from '../../context'
+import EventCardWrapper from '../../Components/EventCardWrapper'
+import { Context } from '../../Context'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import 'moment-timezone'
