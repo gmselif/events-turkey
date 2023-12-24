@@ -110,6 +110,7 @@ function Signup() {
                       <Col xs={1}>
                         <Field
                           name="checkbox1"
+                          id="checkbox1"
                           type="checkbox"
                           style={{ transform: "scale(2)" }}
                         />
@@ -131,6 +132,7 @@ function Signup() {
                       <Col xs={1}>
                         <input
                           name="checkbox2"
+                          id="checkbox2"
                           type="checkbox"
                           style={{ transform: "scale(2)" }}
                         />
