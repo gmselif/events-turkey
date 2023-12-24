@@ -77,6 +77,7 @@ function Signin() {
                       <Col xs={1}>
                         <input
                           name="checkbox1"
+                          id="checkbox1"
                           type="checkbox"
                           style={{ transform: "scale(2)" }}
                         />
