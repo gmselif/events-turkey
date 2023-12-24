@@ -1,4 +1,4 @@
-import AxiosInstance from "../AxiosInstance";
+import AxiosInstance from "../axiosInstance";
 
 async function GetAll() {
   return AxiosInstance("events")

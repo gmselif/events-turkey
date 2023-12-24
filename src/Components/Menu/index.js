@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
 import { useQuery } from 'react-query'
-import GetAll from '../../Network/GetAll'
-import { Context } from '../../Context'
+import GetAll from '../../network/getAll'
+import { Context } from '../../context'
 import { Link } from 'react-router-dom'
 import { Container, Navbar, Nav, Button } from 'react-bootstrap'
-import 'moment-timezone'
 import moment from 'moment'
 
 function Menu() {

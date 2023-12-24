@@ -1,4 +1,4 @@
-import AxiosInstance from "../AxiosInstance";
+import AxiosInstance from "../axiosInstance";
 
 function GetConcerts() {
   return AxiosInstance("events?eventType=concert")
