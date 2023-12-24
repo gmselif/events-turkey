@@ -9,7 +9,7 @@ import Standups from "../Pages/Standups"
 import Details from "../Pages/Details"
 import Signin from "../Pages/Signin"
 import Signup from "../Pages/Signup"
-import Favorites from "../Pages/Favorites"
+import Favorites from "../Pages/favorites"
 import NotFound from "../Pages/NotFound"
 
 const routes = [
