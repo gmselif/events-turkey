@@ -8,13 +8,12 @@ function App() {
   return (
     <div style={{ overflow: "hidden", backgroundColor: "#f1f1f1" }}>
       <Menu />
-      
+
       <Routes>
         {
-          routes.map((route, key) => {
-            if (route.path != "/NotFound" && route.path != "/Login")
-              return <Route key={key} path={route.path} element={route.element} />
-          })
+          routes.map((route, key) =>
+            <Route key={key} path={route.path} element={route.element} />
+          )
         }
       </Routes>
 
