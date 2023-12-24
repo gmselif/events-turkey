@@ -1,4 +1,4 @@
-import AxiosInstance from "../axiosInstance";
+import AxiosInstance from "../AxiosInstance";
 
 function GetStandups() {
   return AxiosInstance("events?eventType=standup")

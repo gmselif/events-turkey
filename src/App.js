@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import routes from '../src/routes'
-import Menu from './components/menu'
-import Footer from './components/footer'
-import ScrollButtons from './components/scrollButtons'
+import Menu from './Components/Menu'
+import Footer from './Components/Footer'
+import ScrollButtons from './Components/ScrollButtons'
 
 function App() {
   return (

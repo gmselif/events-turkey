@@ -5,8 +5,8 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import {ContextProvider} from './context'
-import ScrollToTop from './components/scrollToTop'
+import {ContextProvider} from './Context'
+import ScrollToTop from './Components/scrollToTop'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient();

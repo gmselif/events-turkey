@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react'
-import Slider from '../../components/slider'
-import NavigationButtons from '../../components/navigationButtons'
-import EventCardWrapper from '../../components/eventCardWrapper'
-import { Context } from '../../context'
+import Slider from '../../Components/Slider'
+import NavigationButtons from '../../Components/NavigationButtons'
+import EventCardWrapper from '../../Components/EventCardWrapper'
+import { Context } from '../../Context'
 import moment from 'moment'
 
 function Festivals() {
